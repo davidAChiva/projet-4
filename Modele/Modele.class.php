@@ -9,13 +9,13 @@ abstract class Modele
     {
         if ($params == null) 
         {
-            $req = $this->getBdd()->query($sql); // Exécution directe
+            $results = $this->getBdd()->query($sql); // Exécution directe
         }
         
         else
         {
-            $req = $this->getBdd()->prepare($sql); // Exécution préparée
-            $req->execute($params);
+            $results = $this->getBdd()->prepare($sql); // Exécution préparée
+            $results->execute($params);
         }
         return $req;
     }
