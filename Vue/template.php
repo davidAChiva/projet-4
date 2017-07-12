@@ -2,7 +2,9 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/general.css" />
         <title><?= $titre ?></title>
+        
     </head>
     <body>
         <header>
@@ -11,11 +13,11 @@
                <h2>Livre de Jean Forteroche</h2>
             </div>
             <div id="header2">
-                <img src="../images/aventure-alaska-camping.jpg" alt="Image d'un camping sauvage en Alaska">
+                
             </div>
         </header>
         <section id="list_episodes">
-        <?= $corpsPage ?>    
+         <?= $corpsPage ?>   
         </section>
         <footer>
             <h4>BLOG REALISE PAR DAVID ALFARO-CHIVA POUR MONSIEUR JEAN FORTEROCHE</h4>
