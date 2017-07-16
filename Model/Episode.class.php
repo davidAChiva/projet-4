@@ -8,7 +8,7 @@ class Episode extends Modele
     public function getEpisodes()
     {
         $sql = 'SELECT id, titre, contenu, date_creation FROM episodes BY id DESC';
-        $episodes = $this->execute($sql);
+        $episodes = $this->executeRequete($sql);
         return $episodes;
     }
 }

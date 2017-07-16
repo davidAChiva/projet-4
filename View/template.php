@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/general.css" />
-        <title><?= $titre ?></title>
+        <title><?= $title ?></title>
         
     </head>
     <body>
@@ -16,8 +16,8 @@
                 
             </div>
         </header>
-        <section id="list_episodes">
-         <?= $corpsPage ?>   
+        <section id="episodes">
+         <?= $sectionContent ?>   
         </section>
         <footer>
             <h4>BLOG REALISE PAR DAVID ALFARO-CHIVA POUR MONSIEUR JEAN FORTEROCHE</h4>
