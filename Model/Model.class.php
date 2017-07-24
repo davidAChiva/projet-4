@@ -1,9 +1,9 @@
 <?php
 
-abstract class Modele 
+abstract class Model 
 {
     // Objet PDO d'accès à la base de donnée
-    private $bdd
+    private $bdd;
     
     protected function executeRequete($sql, $params = null)
     {
@@ -17,7 +17,7 @@ abstract class Modele
             $results = $this->getBdd()->prepare($sql); // Exécution préparée
             $results->execute($params);
         }
-        return $req;
+        return $results;
     }
     
     // Connexion à la base de donnée

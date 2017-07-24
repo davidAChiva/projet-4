@@ -17,7 +17,7 @@
             </div>
         </header>
         <section id="episodes">
-         <?= $sectionContent ?>   
+         <?= $sectionContent ?>
         </section>
         <footer>
             <h4>BLOG REALISE PAR DAVID ALFARO-CHIVA POUR MONSIEUR JEAN FORTEROCHE</h4>
