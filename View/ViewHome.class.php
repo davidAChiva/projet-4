@@ -1,6 +1,6 @@
 <?php
 
-$title = "Accueil - Billet simple pour l'Alaska";
+$title = "Accueil | Billet simple pour l'Alaska";
 ob_start();
 foreach ($episodes as $episode): ?>
 <div>
