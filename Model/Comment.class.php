@@ -11,4 +11,12 @@ class Comment extends Model
         $comments = $this->executeRequest($sql, array($idEpisode));
         return $comments;
     }
+    // Ajoute un commentaire à la base
+    public function setComment($author, $content, $idEpisode)
+    {
+        $sql='INSERT INTO comments(author, content, date_comment, episode_id) VALUES(?, ? , CURDATE(), ?)';
+        $setComment = $this->executeRequest($sql, array($author, $content, $idEpisode));
+        return $setComment;
+        
+    }
 }

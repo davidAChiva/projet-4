@@ -21,4 +21,12 @@ class ControllerEpisode
         $comments = $this->comment->getComments($idEpisode);
         require_once 'View/ViewEpisode.class.php';
     }
+    
+    // Ajout d'un commentaire à un épisode
+    public function newComment($author, $content, $idEpisode)
+    {
+        $this->comment->setComment($author, $content, $idEpisode);
+        
+        
+    }
 }
