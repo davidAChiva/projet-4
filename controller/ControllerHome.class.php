@@ -10,7 +10,8 @@ class ControllerHome
     {
         $this->episode = new Episode();
     }
-
+    
+    // Affiche tous les épisodes
     public function getHome()
     {
        $episodes = $this->episode->getEpisodes();

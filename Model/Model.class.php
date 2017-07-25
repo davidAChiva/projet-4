@@ -5,7 +5,7 @@ abstract class Model
     // Objet PDO d'accès à la base de donnée
     private $bdd;
     
-    protected function executeRequete($sql, $params = null)
+    protected function executeRequest($sql, $params = null)
     {
         if ($params == null) 
         {

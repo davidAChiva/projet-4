@@ -8,7 +8,7 @@ class Episode extends Model
     public function getEpisodes()
     {
         $sql = 'SELECT id, titre, contenu, date_creation FROM episodes ORDER BY id DESC';
-        $episodes = $this->executeRequete($sql);
+        $episodes = $this->executeRequest($sql);
         return $episodes;
     }
     
@@ -16,8 +16,8 @@ class Episode extends Model
     public function getEpisode($idEpisode)
     {
         $sql = 'SELECT id, titre, contenu, date_creation FROM episodes WHERE id = ?';
-        $episode = $this->executeRequete($sql, array($idEpisode));
-        if ($episode ->rowCount() > 0)
+        $episode = $this->executeRequest($sql, array($idEpisode));
+        if ($episode ->rowCount() === 1)
         {
             return $episode->fetch();
         }
