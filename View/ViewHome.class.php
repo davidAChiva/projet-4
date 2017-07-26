@@ -5,7 +5,7 @@ ob_start();
 foreach ($episodes as $episode): ?>
 <div class='blockEpisode'>
     <h1 class='titleEpisode'><?= $episode['titre'] ?></h1>
-    <p class='contentEpisode'> <?= substr($episode['contenu'],0,150) ?></p>
+    <p class='contentEpisode'> <?= substr($episode['contenu'],0,150) . '...' ?></p>
     <a href='<?= 'index.php?episode=' . $episode['id'] ?>'>Voir l'épisode en entier</a>
 </div>
 <?php endforeach; ?>
