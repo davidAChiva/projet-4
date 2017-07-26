@@ -2,7 +2,7 @@
 <html lang='fr'>
     <head>
         <meta charset='UTF-8' />
-        <link rel='stylesheet' href='css/general.css' />
+        <link rel='stylesheet' href='css/generalFront.css' />
         <title><?= $title ?></title>
         <script src="https://use.fontawesome.com/f520e036a2.js"></script>
     </head>
