@@ -1,6 +1,6 @@
 <?php
 
-$title = $episode['titre'] . " | Billet simple pour l'alaska" ;
+$title = $episode['titre'] . " | Billet simple pour l'Alaska" ;
 ob_start();
 
 ?>
