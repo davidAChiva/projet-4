@@ -27,6 +27,5 @@ class ControllerEpisode
     {
         $this->comment->setComment($author, $content, $idEpisode);
         
-        
     }
 }

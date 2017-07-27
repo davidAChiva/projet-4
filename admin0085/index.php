@@ -6,7 +6,7 @@
         <title>Connexion Admin | Billet simple pour l'Alaska</title>
     </head>
     <body>
-        <form method='post' action='Controller/connexion.class.php'>
+        <form method='post' action='connexionSecure.php'>
             <label for='pseudoAdmin'> Pseudo</label>
             <input type='text' id='pseudoAdmin' name='pseudoAdmin' required /> <br />
             <label for='passwordAdmin'>Votre mot de passe</label>
