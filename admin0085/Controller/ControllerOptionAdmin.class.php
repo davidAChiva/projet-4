@@ -23,7 +23,7 @@ class ControllerOptionAdmin
     }
     
     // Creer le nouvel épisode dans la base de donnée
-    public function setEpisode($title, $content)
+    public function newEpisode($title, $content)
     {
         $this->setEpisode->setEpisode($title,$content);
     }
