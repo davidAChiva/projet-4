@@ -6,11 +6,13 @@ class ControllerOptionAdmin
 {
     private $getOption;
     private $setEpisode;
+    private $getEpisodes;
     
     public function __construct ($option)
     {
         $this->getOption = $option;
         $this->setEpisode = new OptionAdmin;
+        $this->getEpisodes = new OptionAdmin;
     }
     
     // Affiche la page demandée
@@ -20,6 +22,11 @@ class ControllerOptionAdmin
         {
             require_once 'View/ViewCreateEpisode.php';
         }
+        else if ($this->getOption === 'modifyEpisode')
+        {
+            $episodes=$this->getEpisodes->getEpisodes();
+            require_once 'View/ViewModifyEpisode.php';
+        }
     }
     
     // Creer le nouvel épisode dans la base de donnée
@@ -27,4 +34,6 @@ class ControllerOptionAdmin
     {
         $this->setEpisode->setEpisode($title,$content);
     }
+    
+    
 }

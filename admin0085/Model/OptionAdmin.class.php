@@ -10,5 +10,13 @@ class OptionAdmin extends Model
         $sql = 'INSERT INTO episodes (titre, contenu, date_creation) VALUES (?, ?, CURDATE())';
         $setEpisode = $this->executeRequest($sql,array($title,$content));
         return $setEpisode;
-    }   
+    }
+    
+    // Requête pour obtenir la liste de tous les billets
+    public function getEpisodes()
+    {
+        $sql = 'SELECT id, titre, contenu, date_creation FROM episodes ORDER BY id DESC';
+        $episodes = $this->executeRequest($sql);
+        return $episodes;
+    }
 }
