@@ -27,12 +27,20 @@ class ControllerOptionAdmin
         else if ($this->getOption === 'modifyEpisode')
         {
             $episodes=$this->getEpisodes->getEpisodes();
-            require_once 'View/ViewModifyEpisode.php';
+            
+            if (!isset($_GET['id']))
+            {
+                $titleEpisode='';
+                $contentEpisode='';
+            }
             
             if (isset($_GET['id']))
             {
-               $episode=$this->getEpisode->getEpisode(1);
+                $episode=$this->getEpisode->getEpisode($_GET['id']);
+                $titleEpisode = $episode['titre'];
+                $contentEpisode = $episode['contenu'];
             }
+            require 'View/ViewModifyEpisode.php';
         }
     }
     

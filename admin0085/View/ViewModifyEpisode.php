@@ -15,9 +15,9 @@ ob_start();
 
 <form method='post' action='executeData.php'>
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
-    <input type='text' id='titleEditEpisode' name='titleEditEpisode' required /> <br />
+    <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?php echo $titleEpisode; ?>' required /> <br />
     <label for='contentEditEpisode'>CONTENU DE L'EPISODE</label>
-    <textarea id='contentEditEpisode' name='contentEditEpisode'></textarea>
+    <textarea id='contentEditEpisode' name='contentEditEpisode'required> <?= $contentEpisode ?> </textarea>
     <input type='submit' value="Modifiez l'épisode" />
 </form>
 <?php
