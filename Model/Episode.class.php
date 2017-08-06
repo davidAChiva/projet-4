@@ -4,7 +4,7 @@ require_once 'Framework/Model.class.php';
 
 class Episode extends Model
 {
-    // Requête pour obtenir la liste de tous les billets
+    // Requête pour obtenir la liste de tous les épisodes
     public function getEpisodes()
     {
         $sql = 'SELECT id, titre, contenu, date_creation FROM episodes ORDER BY id DESC';
@@ -12,7 +12,7 @@ class Episode extends Model
         return $episodes;
     }
     
-    // Affichage d'un seul billet
+    // Affichage d'un seul épisode
     public function getEpisode($idEpisode)
     {
         $sql = 'SELECT id, titre, contenu, date_creation FROM episodes WHERE id = ?';

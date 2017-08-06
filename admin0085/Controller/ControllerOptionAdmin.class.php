@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Model/OptionAdmin.class.php';
+require 'Model/OptionAdmin.class.php';
 
 class ControllerOptionAdmin
 {
@@ -13,6 +13,7 @@ class ControllerOptionAdmin
         $this->getOption = $option;
         $this->setEpisode = new OptionAdmin;
         $this->getEpisodes = new OptionAdmin;
+        $this->getEpisode = new OptionAdmin;
     }
     
     // Affiche la page demandée
@@ -22,10 +23,16 @@ class ControllerOptionAdmin
         {
             require_once 'View/ViewCreateEpisode.php';
         }
+        
         else if ($this->getOption === 'modifyEpisode')
         {
             $episodes=$this->getEpisodes->getEpisodes();
             require_once 'View/ViewModifyEpisode.php';
+            
+            if (isset($_GET['id']))
+            {
+               $episode=$this->getEpisode->getEpisode(1);
+            }
         }
     }
     
