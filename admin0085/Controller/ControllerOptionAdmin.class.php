@@ -14,6 +14,7 @@ class ControllerOptionAdmin
         $this->setEpisode = new OptionAdmin;
         $this->getEpisodes = new OptionAdmin;
         $this->getEpisode = new OptionAdmin;
+        $this->modifyEpisode = new OptionAdmin;
     }
     
     // Affiche la page demandée
@@ -30,9 +31,9 @@ class ControllerOptionAdmin
             
             if (!isset($_GET['id']))
             {
-                $idEpisode='';
-                $titleEpisode='';
-                $contentEpisode='';
+                $idEpisode = '';
+                $titleEpisode = '';
+                $contentEpisode = '';
             }
             
             if (isset($_GET['id']))
@@ -44,12 +45,23 @@ class ControllerOptionAdmin
             }
             require 'View/ViewModifyEpisode.php';
         }
+        else if ($this->getOption === 'manageComments')
+        {
+            $episodes=$this->getEpisodes->getEpisodes();
+            require_once 'View/ViewManageComments.php';
+        }
     }
     
     // Creer le nouvel épisode dans la base de donnée
     public function newEpisode($title, $content)
     {
         $this->setEpisode->setEpisode($title,$content);
+    }
+    
+    // modifie l'épisode
+    public function modifyEpisode($id,$title,$content)
+    {
+        $this->modifyEpisode->modifyEpisode($id,$title,$content);    
     }
     
     

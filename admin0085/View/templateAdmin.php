@@ -10,7 +10,7 @@
     <body>
         <header>
             <ul>
-                <li>Accueil</li>
+                <li><a href='home.php'>Accueil</a></li>
                 <li>Gérer mon compte</li>
                 <li>Déconnexion</li>
             </ul>
