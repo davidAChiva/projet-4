@@ -23,11 +23,23 @@ class Configuration
     {
         if (self::$parameters == null)
         {
-            $file = 'Config/prod.ini';
+            $file = 'config/prod.ini';
             
             if (!file_exists($file))
             {
-                $file = 'Config/dev.ini';
+                // chemin du dossier admin
+                $file = '../config/prod.ini';
+            }
+            
+            if (!file_exists($file))
+            {
+                $file = 'config/dev.ini';
+                
+                // Chemin du dossier admin
+                if(!file_exists($file))
+                {
+                    $file = '../config/dev.ini';
+                }
             }
             
             if (!file_exists($file))

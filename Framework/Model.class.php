@@ -1,20 +1,21 @@
 <?php
-
+require_once 'Configuration.class.php';
+    
 abstract class Model 
 {
     // Objet PDO d'accès à la base de donnée
-    private $bdd;
+    private static $bdd;
     
     protected function executeRequest($sql, $params = null)
     {
         if ($params == null) 
         {
-            $results = $this->getBdd()->query($sql); // Exécution directe
+            $results = self::getBdd()->query($sql); // Exécution directe
         }
         
         else
         {
-            $results = $this->getBdd()->prepare($sql); // Exécution préparée
+            $results = self::getBdd()->prepare($sql); // Exécution préparée
             $results->execute($params);
         }
         return $results;
@@ -23,10 +24,16 @@ abstract class Model
     // Connexion à la base de donnée
     private function getBdd()
     {
-        if ($this->bdd == null)
+        if (self::$bdd == null)
         {
-            $this->bdd = new PDO('mysql:host=localhost;dbname=blog_ecrivain;charset=utf8', 'root','',array(PDO::ATTR_ERRMODE => PDO:: ERRMODE_EXCEPTION));
+            // Récupération des paramètres de connexion
+            $dsn = Configuration::get('dsn');
+            $login = Configuration::get('login');
+            $password = Configuration::get('password');
+            
+            // Connexion à la BD
+            self::$bdd = new PDO($dsn,$login,$password,array(PDO::ATTR_ERRMODE => PDO:: ERRMODE_EXCEPTION));
         }
-        return $this->bdd;
+        return self::$bdd;
     }
 }

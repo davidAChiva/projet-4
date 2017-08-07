@@ -1,6 +1,6 @@
 <?php
 
-require_once "Model/Episode.class.php";
+require_once 'Model/Episode.class.php';
 
 class ControllerHome
 {
