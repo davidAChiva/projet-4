@@ -38,7 +38,7 @@ class OptionAdmin extends Model
     // Modifie un épisode existant
     public function modifyEpisode($id,$title,$content)
     {
-        $sql = 'UPDATE episodes SET titre=?,contenu=? WHERE id=?'
+        $sql = 'UPDATE episodes SET titre=?,contenu=? WHERE id=?';
         $modifyEpisode = $this->executeRequest($sql, array($title,$content,$id));
         return $modifyEpisode;
     }

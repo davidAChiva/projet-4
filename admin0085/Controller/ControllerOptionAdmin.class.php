@@ -30,6 +30,7 @@ class ControllerOptionAdmin
             
             if (!isset($_GET['id']))
             {
+                $idEpisode='';
                 $titleEpisode='';
                 $contentEpisode='';
             }
@@ -37,6 +38,7 @@ class ControllerOptionAdmin
             if (isset($_GET['id']))
             {
                 $episode=$this->getEpisode->getEpisode($_GET['id']);
+                $idEpisode= $episode['id'];
                 $titleEpisode = $episode['titre'];
                 $contentEpisode = $episode['contenu'];
             }
