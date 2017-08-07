@@ -8,7 +8,7 @@ ob_start();
 
 <div class='blockEpisode'>
     <h1 class='titleEpisode'><?= $episode['titre'] ?></h1>
-    <a href='<?= 'home.php?option=modifyEpisode&id=' . $episode["id"] ?>'>Modifier cette épisode</a>
+    <a href='<?= 'home.php?option=manageComments&idEpisode=' . $episode["id"] ?>'>Modifier cette épisode</a>
 </div>
 
 <?php endforeach; ?>
