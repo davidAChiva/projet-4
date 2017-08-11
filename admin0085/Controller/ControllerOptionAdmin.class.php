@@ -58,7 +58,6 @@ class ControllerOptionAdmin
             if (isset($_GET['idEpisode']))
             {
                 $comments = $this->getComments->getComments($_GET['idEpisode']);
-                $commentAuthor = $comments['author'];
             }
             require_once 'View/ViewManageComments.php';
         }

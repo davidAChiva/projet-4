@@ -15,7 +15,14 @@ ob_start();
 
 <div class='blockComments'>
     <h2> Commentaires de l'épisode</h2>
-    <p><?= $commentAuthor ?></p>
+<?php foreach($comments as $comment): ?>
+    <div class='comment'>
+        <p><?= $comment['author'] ?></p>
+        <p><?= $comment['content'] ?></p>
+        <a href='<?='home.php?option=manageComment&idEpisode=' . $_GET['idEpisode'] . '&typeManage=delete' ?>'>Supprimer ce commentaire</a>
+        <a href='<?='home.php?option=manageComment&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify' ?>'>Modifier ce commentaire</a>
+    </div>
+<?php endforeach; ?>
 </div>
 <?php
 $sectionContent = ob_get_clean();
