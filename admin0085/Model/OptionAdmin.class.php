@@ -42,4 +42,12 @@ class OptionAdmin extends Model
         $modifyEpisode = $this->executeRequest($sql, array($title,$content,$id));
         return $modifyEpisode;
     }
+    
+    // Récupére les commentaires d'un épisode
+    public function getComments($idEpisode)
+    {
+        $sql = 'SELECT id,author,content,date_comment,episode_id FROM comments WHERE episode_id=?';
+        $comments = $this->executeRequest($sql, array($idEpisode));
+        return $comments->fetch();
+    }
 }

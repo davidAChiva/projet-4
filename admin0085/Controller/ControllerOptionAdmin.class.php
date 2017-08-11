@@ -15,6 +15,7 @@ class ControllerOptionAdmin
         $this->getEpisodes = new OptionAdmin;
         $this->getEpisode = new OptionAdmin;
         $this->modifyEpisode = new OptionAdmin;
+        $this->getComments = new OptionAdmin;
     }
     
     // Affiche la page demandée
@@ -48,6 +49,17 @@ class ControllerOptionAdmin
         else if ($this->getOption === 'manageComments')
         {
             $episodes=$this->getEpisodes->getEpisodes();
+            
+            if (!isset($_GET['idEpisode']))
+            {
+                $commentAuthor = '';
+            }
+            
+            if (isset($_GET['idEpisode']))
+            {
+                $comments = $this->getComments->getComments($_GET['idEpisode']);
+                $commentAuthor = $comments['author'];
+            }
             require_once 'View/ViewManageComments.php';
         }
     }
