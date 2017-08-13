@@ -7,6 +7,10 @@ class ControllerOptionAdmin
     private $getOption;
     private $setEpisode;
     private $getEpisodes;
+    private $getEpisode;
+    private $modifyEpisode;
+    private $getComments;
+    private $deleteComment;
     
     public function __construct ($option)
     {
@@ -16,6 +20,7 @@ class ControllerOptionAdmin
         $this->getEpisode = new OptionAdmin;
         $this->modifyEpisode = new OptionAdmin;
         $this->getComments = new OptionAdmin;
+        $this->deleteComment = new OptionAdmin;
     }
     
     // Affiche la page demandée
@@ -52,14 +57,19 @@ class ControllerOptionAdmin
             
             if (!isset($_GET['idEpisode']))
             {
-                $comments= $this->getComments->getComments(null);
+                $comments = $this->getComments->getComments(null);
             }
             
             if (isset($_GET['idEpisode']))
             {
                 $comments = $this->getComments->getComments($_GET['idEpisode']);
+                
+                if (isset($_GET['typeManage']) AND (isset($_GET['idComment'])))
+                {
+                    $this->deleteComment($_GET['idComment']);
+                    header('location:home.php?option=manageComments&idEpisode=' . $_GET['idEpisode']);
+                }
             }
-            
             require_once 'View/ViewManageComments.php';
         }
     }
@@ -76,5 +86,10 @@ class ControllerOptionAdmin
         $this->modifyEpisode->modifyEpisode($id,$title,$content);    
     }
     
+    // Supprime un commentaire
+    public function deleteComment($idEpisode)
+    {
+        $this->deleteComment->deleteComment($idEpisode);
+    }
     
 }

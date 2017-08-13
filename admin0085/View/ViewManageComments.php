@@ -19,8 +19,8 @@ ob_start();
     <div class='comment'>
         <p><?= $comment['author'] ?></p>
         <p><?= $comment['content'] ?></p>
-        <a href='<?='home.php?option=manageComment&idEpisode=' . $_GET['idEpisode'] . '&typeManage=delete' ?>'>Supprimer ce commentaire</a>
-        <a href='<?='home.php?option=manageComment&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify' ?>'>Modifier ce commentaire</a>
+        <a href='<?='home.php?option=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=delete&idComment=' .  $comment['id'] ?>'>Supprimer ce commentaire</a>
+        <a href='<?='home.php?option=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify' ?>'>Modifier ce commentaire</a>
     </div>
 <?php endforeach; ?>
 </div>

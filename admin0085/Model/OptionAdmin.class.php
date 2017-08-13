@@ -50,4 +50,12 @@ class OptionAdmin extends Model
         $comments = $this->executeRequest($sql, array($idEpisode));
         return $comments;
     }
+    
+    // Supprime un commentaire
+    public function deleteComment($idComment)
+    {
+        $sql = 'DELETE FROM comments WHERE id=?';
+        $deleteComment = $this->executeRequest($sql,array($idComment));
+        return $deleteComment;
+    }
 }
