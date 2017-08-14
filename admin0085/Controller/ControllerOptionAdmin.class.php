@@ -30,6 +30,12 @@ class ControllerOptionAdmin
         if ($this->getOption === 'newEpisode')
         {
             require_once 'View/ViewCreateEpisode.php';
+            
+            if ((isset($_POST['titleNewEpisode'])) AND (isset($_POST['contentNewEpisode'])))
+                {
+                $this->newEpisode(htmlspecialchars($_POST['titleNewEpisode']), htmlspecialchars($_POST['contentNewEpisode']));
+                header('Location: home.php?option=newEpisode');
+                }
         }
         
         else if ($this->getOption === 'modifyEpisode')
