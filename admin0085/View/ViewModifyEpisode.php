@@ -2,8 +2,8 @@
 $title = 'Modifier un épisode | Billet simple pour l\'Alaska';
 ob_start();
 ?>
+<div>
 <h3>Sélectionnez l'épisode à modifier</h3>
-
 <?php foreach($episodes as $episode): ?>
 
 <div class='blockEpisode'>
@@ -19,9 +19,10 @@ ob_start();
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?php echo $titleEpisode; ?>' required /> <br />
     <label for='contentEditEpisode'>CONTENU DE L'EPISODE</label>
-    <textarea id='contentEditEpisode' name='contentEditEpisode'required> <?= $contentEpisode ?> </textarea>
+    <textarea id='contentEditEpisode' name='contentEditEpisode' rows='20'required> <?= $contentEpisode ?> </textarea>
     <input type='submit' value="Modifiez l'épisode" />
 </form>
+</div>
 <?php
 $sectionContent = ob_get_clean();
 require_once ('View/templateAdmin.php');

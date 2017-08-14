@@ -1,0 +1,49 @@
+ul
+{
+    font-size: 20px;
+    line-height: 100px;
+    text-align: center;
+    display: flex;
+    list-style: none;
+}
+li
+{
+    width: 300px;
+    margin: 2px;
+    border: 2px black solid;
+    color: white;
+}
+li a
+{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+}
+#linkOption
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+#linkOption a
+{
+    text-decoration: none;
+    background-color: #60AAC9;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 200px;
+    width: 300px;
+    height: 200px;
+    border: 2px black solid;
+}
+#deleteComment
+{
+    text-decoration: none;
+    padding: 5px;
+    border : 2px black solid;
+    color: black;
+}
