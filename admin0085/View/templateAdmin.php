@@ -12,7 +12,7 @@
             <ul>
                 <li><a href='home.php'>Accueil</a></li>
                 <li>Gérer mon compte</li>
-                <li>Déconnexion</li>
+                <li><a href='home.php?option=deconnexion'>Déconnexion</a></li>
             </ul>
         </header>
         <section id='blockBook'>

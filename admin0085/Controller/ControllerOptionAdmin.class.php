@@ -27,6 +27,12 @@ class ControllerOptionAdmin
     // Affiche la page demandée
     public function displayOption ()
     {
+        // Déconnecte le compte et supprimer la session
+        if ($this->getOption === 'deconnexion')
+        {
+            session_destroy();
+            header('location:index.php');
+        }
         if ($this->getOption === 'newEpisode')
         {
             require_once 'View/ViewCreateEpisode.php';
