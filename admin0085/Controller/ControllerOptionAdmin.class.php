@@ -31,6 +31,7 @@ class ControllerOptionAdmin
         {
             require_once 'View/ViewCreateEpisode.php';
             
+            // Ajouter un nouvel épisode
             if ((isset($_POST['titleNewEpisode'])) AND (isset($_POST['contentNewEpisode'])))
                 {
                 $this->newEpisode(htmlspecialchars($_POST['titleNewEpisode']), htmlspecialchars($_POST['contentNewEpisode']));
@@ -55,6 +56,13 @@ class ControllerOptionAdmin
                 $idEpisode= $episode['id'];
                 $titleEpisode = $episode['titre'];
                 $contentEpisode = $episode['contenu'];
+                
+                // Modifie un épisode
+                if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
+                {
+                    $this->modifyEpisode($_POST['idEditEpisode'],$_POST['titleEditEpisode'],$_POST['contentEditEpisode']);
+                    header('Location: home.php?option=modifyEpisode');
+                }
             }
             require 'View/ViewModifyEpisode.php';
         }

@@ -13,7 +13,7 @@ ob_start();
 
 <?php endforeach; ?>
 
-<form method='post' action='executeData.php'>
+<form method='post' action='home.php?option=modifyEpisode&id=<?= $idEpisode ?>'>
     <label for='idEditEpisode'>ID de l'épisode</label>
     <input type='text' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
