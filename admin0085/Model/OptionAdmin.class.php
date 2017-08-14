@@ -58,4 +58,12 @@ class OptionAdmin extends Model
         $deleteComment = $this->executeRequest($sql,array($idComment));
         return $deleteComment;
     }
+    
+    // Modifie un commentaire existant
+    public function modifyComment($id,$author,$content)
+    {
+        $sql = 'UPDATE comments SET author=?,content=? WHERE id=?';
+        $modifyComment = $this->executeRequest($sql, array($author,$content,$id));
+        return $modifyComment;
+    }
 }
