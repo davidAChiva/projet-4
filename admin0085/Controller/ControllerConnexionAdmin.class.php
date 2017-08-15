@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Model/Admin.class.php';
+require_once '../Model/Admin.class.php';
 
 class ControllerConnexionAdmin
 {

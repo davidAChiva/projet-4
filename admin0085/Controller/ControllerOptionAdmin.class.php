@@ -1,8 +1,7 @@
 <?php
-
+require_once '../Model/Admin.class.php';
 require_once '../Model/Comment.class.php';
 require_once '../Model/Episode.class.php';
-require_once 'Model/Admin.class.php';
 
 
 class ControllerOptionAdmin
