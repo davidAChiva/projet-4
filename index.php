@@ -8,7 +8,7 @@ if (isset($_GET['episode']))
     
     if ($idEpisode != 0)
     {
-        $getEpisode = new ControllerEpisode;
+        $getEpisode = new ControllerEpisode();
         $getEpisode->episode($idEpisode);
     }
 }

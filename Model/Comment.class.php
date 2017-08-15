@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Framework/Model.class.php';
+require('Framework/Model.class.php');
 
 class Comment extends Model
 {
@@ -17,6 +17,19 @@ class Comment extends Model
         $sql='INSERT INTO comments(author, content, date_comment, episode_id) VALUES(?, ? , CURDATE(), ?)';
         $setComment = $this->executeRequest($sql, array($author, $content, $idEpisode));
         return $setComment;
-        
+    }
+    // Modifie un commentaire existant
+    public function modifyComment($id,$author,$content)
+    {
+        $sql = 'UPDATE comments SET author=?,content=? WHERE id=?';
+        $modifyComment = $this->executeRequest($sql, array($author,$content,$id));
+        return $modifyComment;
+    }
+    // Supprime un commentaire
+    public function deleteComment($idComment)
+    {
+        $sql = 'DELETE FROM comments WHERE id=?';
+        $deleteComment = $this->executeRequest($sql,array($idComment));
+        return $deleteComment;
     }
 }

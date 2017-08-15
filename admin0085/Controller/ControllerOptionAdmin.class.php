@@ -1,6 +1,9 @@
 <?php
 
-require 'Model/OptionAdmin.class.php';
+require_once '../Model/Comment.class.php';
+require_once '../Model/Episode.class.php';
+require_once 'Model/Admin.class.php';
+
 
 class ControllerOptionAdmin
 {
@@ -11,17 +14,18 @@ class ControllerOptionAdmin
     private $modifyEpisode;
     private $getComments;
     private $deleteComment;
+    private $modifyComment;
     
     public function __construct ($option)
     {
         $this->getOption = $option;
-        $this->setEpisode = new OptionAdmin;
-        $this->getEpisodes = new OptionAdmin;
-        $this->getEpisode = new OptionAdmin;
-        $this->modifyEpisode = new OptionAdmin;
-        $this->getComments = new OptionAdmin;
-        $this->deleteComment = new OptionAdmin;
-        $this->modifyComment = new OptionAdmin;
+        $this->setEpisode = new Episode;
+        $this->getEpisodes = new Episode;
+        $this->getEpisode = new Episode;
+        $this->modifyEpisode = new Episode;
+        $this->getComments = new Comment;
+        $this->deleteComment = new Comment;
+        $this->modifyComment = new Comment;
     }
     
     // Affiche la page demandée
@@ -101,6 +105,7 @@ class ControllerOptionAdmin
             }
             require_once 'View/ViewManageComments.php';
         }
+        require_once'View/templateAdmin.php';
     }
     
     // Creer le nouvel épisode dans la base de donnée

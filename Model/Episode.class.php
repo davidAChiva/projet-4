@@ -26,4 +26,18 @@ class Episode extends Model
             throw new Exception("Aucun billet ne correspond à l'identifiant" . $idEpisode);
         }
     }
+    // Requête pour enregistrer dans la BD le nouvel épisode
+    public function setEpisode($title,$content)
+    {
+        $sql = 'INSERT INTO episodes (titre, contenu, date_creation) VALUES (?, ?, CURDATE())';
+        $setEpisode = $this->executeRequest($sql,array($title,$content));
+        return $setEpisode;
+    }
+        // Modifie un épisode existant
+    public function modifyEpisode($id,$title,$content)
+    {
+        $sql = 'UPDATE episodes SET titre=?,contenu=? WHERE id=?';
+        $modifyEpisode = $this->executeRequest($sql, array($title,$content,$id));
+        return $modifyEpisode;
+    }
 }

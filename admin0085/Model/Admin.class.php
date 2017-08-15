@@ -1,7 +1,7 @@
 <?php
 require_once '../Framework/Model.class.php';
 
-class ConnexionAdmin extends Model
+class Admin extends Model
 {
     public function getLoginAdmin($pseudoAdmin, $passwordAdmin)
     {

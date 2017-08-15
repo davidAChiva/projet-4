@@ -10,8 +10,8 @@ class ControllerEpisode
     
     public function __construct()
     {
-        $this->episode = new Episode();
-        $this->comment = new Comment();
+        $this->episode = new Episode;
+        $this->comment = new Comment;
     }
     
     // Affiche le contenu entier d'un seul épisode

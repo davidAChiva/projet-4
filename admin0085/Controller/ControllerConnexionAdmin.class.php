@@ -1,6 +1,6 @@
 <?php
 
-require_once "Model/ConnexionAdmin.class.php";
+require_once 'Model/Admin.class.php';
 
 class ControllerConnexionAdmin
 {
@@ -8,7 +8,7 @@ class ControllerConnexionAdmin
     
     public function __construct()
     {
-        $this->checkLoginAdmin = new ConnexionAdmin();
+        $this->checkLoginAdmin = new Admin;
     }
     
     // Récupére les identifiants saisis
@@ -17,6 +17,4 @@ class ControllerConnexionAdmin
         $loginAdmin = $this->checkLoginAdmin->getLoginAdmin($pseudoAdmin, $passwordAdmin);
         return $loginAdmin;
     }
-
 }
-?>

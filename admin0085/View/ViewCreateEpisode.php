@@ -12,5 +12,4 @@ ob_start();
 </form>
 <?php
 $sectionContent = ob_get_clean();
-require_once ('View/templateAdmin.php');
 ?>
