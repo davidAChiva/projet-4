@@ -4,7 +4,10 @@ if (file_exists('Framework/Model.class.php'))
 {
     require_once 'Framework/Model.class.php';
 }
+else
+{
 require_once '../Framework/Model.class.php';
+}
 
 class Comment extends Model
 {
