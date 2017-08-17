@@ -9,22 +9,10 @@ class ControllerOptionAdmin
     private $episode;
     private $comment;
     
-    public function __construct ($option)
+    public function __construct ()
     {
-        $this->getOption = $option;
-        $this->$episode = Episode;
-        $this->$comment = Comment;
-    }
-    
-    // Affiche la page demandée
-    public function displayOption ()
-    {
-        // Déconnecte le compte et supprimer la session
-        if ($this->getOption === 'deconnexion')
-        {
-            session_destroy();
-            header('Location:index.php');
-        }            
+        $this->episode = new Episode;
+        $this->comment = new Comment;
     }
     
     //Affiche la page creer épisode
@@ -83,7 +71,7 @@ class ControllerOptionAdmin
     public function modifyEpisode($id,$title,$content)
     {
         $this->episode->modifyEpisode($id,$title,$content);
-        header('Location: home.php?option=modifyEpisode');
+        header('Location:home.php?option=modifyEpisode&id=' . $_GET['id']);
         exit;
     }
     
@@ -99,7 +87,5 @@ class ControllerOptionAdmin
     public function modifyComment($idComment,$authorComment,$contentComment)
     {
         $this->comment->modifyComment($idComment,$authorComment,$contentComment);
-        header('Location:home.php?option=manageComments&idEpisode=' . $_GET['idEpisode']);
-        exit;
     }
 }

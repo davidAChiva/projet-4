@@ -11,8 +11,8 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
     if (isset($_GET['option']))
     {
         // Création des objets 
-        $manageEpisode = new ControllerOptionAdmin(null);
-        $manageComment = new ControllerOptionAdmin(null);
+        $manageEpisode = new ControllerOptionAdmin();
+        $manageComment = new ControllerOptionAdmin();
         
         if ($_GET['option'] === 'newEpisode')
         {
@@ -32,13 +32,12 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             }
         if ($_GET['option'] === 'modifyEpisode' AND (isset($_GET['id'])))
             {
-                $manageEpisode->displayEpisodeToModify();
-                
                 // Modifie un épisode
                 if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
                 {
                     $manageEpisode->modifyEpisode($_POST['idEditEpisode'],$_POST['titleEditEpisode'],$_POST['contentEditEpisode']);
                 }
+                $manageEpisode->displayEpisodeToModify();
             }
         else if ($_GET['option'] === 'manageComments' AND (!isset($_GET['idEpisode'])))
         {
@@ -46,24 +45,23 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
         }
         if ($_GET['option'] === 'manageComments' AND isset($_GET['idEpisode']))
         {
+            // Modification du commentaire
+            if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'modify' AND (isset($_GET['idComment'])))
+            {
+                $manageComment->modifyComment($_POST['idComment'],$_POST['authorComment'],$_POST['contentComment']);
+            }
+            // Suppression du commentaire
+            if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete' AND (isset($_GET['idComment'])))
+            {
+                $manageComment->deleteComment($_GET['idComment']); 
+            }
             $manageComment->getComments($_GET['idEpisode']);        
-        }
-        // Suppression du commentaire
-        if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete' AND (isset($_GET['idComment'])))
-        {
-            $manageComment->deleteComment($_GET['idComment']); 
-        }
-        
-        // Modification du commentaire
-        if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'modify' AND (isset($_GET['idComment'])))
-        {
-            $manageComment->modifyComment($_POST['idComment'],$_POST['authorComment'],$_POST['contentComment']);
         }
     }
     else if (isset($_GET['manageAccount']))
     {
         $getManageAccountAdmin = new ControllerManageAccountAdmin($_GET['manageAccount']);
-        $getOptionAdmin->displayManageAccount();
+        $getManageAccountAdmin->displayManageAccount();
         
     }
     else
@@ -74,6 +72,6 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
 }
 else
 {
-    header('location:index.php');
+    header('Location:index.php');
 }
 
