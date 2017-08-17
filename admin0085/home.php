@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-require_once 'Controller/ControllerHomeAdmin.class.php';
-require_once 'Controller/ControllerOptionAdmin.class.php';
+require_once 'Controller/ControllerRubricAdmin.class.php';
 require_once 'Controller/ControllerManageAccountAdmin.class.php';
 
 if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
@@ -10,9 +9,9 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
     // Affiche la page en fonction de la variable option    
     if (isset($_GET['option']))
     {
-        // Création des objets 
-        $manageEpisode = new ControllerOptionAdmin();
-        $manageComment = new ControllerOptionAdmin();
+        // Création des objets
+        $manageEpisode = new ControllerRubricAdmin();
+        $manageComment = new ControllerRubricAdmin();
         
         if ($_GET['option'] === 'newEpisode')
         {
@@ -66,8 +65,8 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
     }
     else
     {
-        $getHomeAdmin = new ControllerHomeAdmin();
-        $getHomeAdmin->getHomeAdmin();
+        $homeAdmin = new ControllerRubricAdmin();
+        $homeAdmin->displayHome();
     }
 }
 else

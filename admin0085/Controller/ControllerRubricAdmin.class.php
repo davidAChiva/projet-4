@@ -4,7 +4,7 @@ require_once '../Model/Comment.class.php';
 require_once '../Model/Episode.class.php';
 
 
-class ControllerOptionAdmin
+class ControllerRubricAdmin
 {
     private $episode;
     private $comment;
@@ -14,7 +14,12 @@ class ControllerOptionAdmin
         $this->episode = new Episode;
         $this->comment = new Comment;
     }
-    
+    // Affiche la page d'accueil
+    public function displayHome()
+    {
+       require "View/ViewHomeAdmin.php";
+       require_once'View/templateAdmin.php';
+    }
     //Affiche la page creer épisode
     public function displayNewEpisode()
     {
