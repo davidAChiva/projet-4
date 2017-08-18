@@ -5,6 +5,7 @@ require_once 'Controller/ControllerRubricAdmin.class.php';
 require_once 'Controller/ControllerAccountAdmin.class.php';
 
 $accountAdmin = new ControllerAccountAdmin();
+
 if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
 {   
     // Affiche la page en fonction de la variable option    

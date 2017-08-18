@@ -10,6 +10,13 @@ class ControllerAccountAdmin
         $this->accountAdmin = new admin;
     }
     
+    // Controle si les identifiants saisis sont correct
+    public function controlLogin($pseudoAdmin,$passwordAdmin)
+    {
+        $loginAdmin = $this->accountAdmin->getLoginAdmin($pseudoAdmin, $passwordAdmin);
+        return $loginAdmin;
+    }
+
     // Déconnecte le compte et supprimer la session
     public function deconnexion()
     {
