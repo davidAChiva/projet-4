@@ -9,7 +9,7 @@ ob_start();
 
     <div class='blockEpisode'>
         <h1 class='titleEpisode'><?= $episode['titre'] ?></h1>
-        <a href='<?= 'home.php?option=manageComments&idEpisode=' . $episode["id"] ?>'>Gérer les commentaires de cette épisode</a>
+        <a href='<?= 'home.php?rubric=manageComments&idEpisode=' . $episode["id"] ?>'>Gérer les commentaires de cette épisode</a>
     </div>
 
     <?php endforeach; ?>
@@ -21,7 +21,7 @@ ob_start();
             <p><?= $comment['author'] ?></p>
             <p><?= $comment['content'] ?></p>
 
-            <form  method='post' action='<?='home.php?option=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify&idComment=' . $comment['id'] ?>'>
+            <form  method='post' action='<?='home.php?rubric=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify&idComment=' . $comment['id'] ?>'>
                 <label for='idComment'>Id du commentaire</label>
                 <input type='text' id='idComment' name='idComment' value='<?= $comment['id'] ?>' required />
                 <label for='authorComment'>Auteur du commentaire</label>
@@ -30,7 +30,7 @@ ob_start();
                 </textarea> <br />
                 <input type='submit' value='Modifier le commentaire' />
             </form> <br />
-            <a id='deleteComment' href='<?='home.php?option=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=delete&idComment=' .  $comment['id'] ?>'>Supprimer ce commentaire</a>
+            <a id='deleteComment' href='<?='home.php?rubric=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=delete&idComment=' .  $comment['id'] ?>'>Supprimer ce commentaire</a>
         </div>
     <?php endforeach; ?>
     </div>

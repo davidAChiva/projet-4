@@ -8,12 +8,12 @@ ob_start();
 
 <div class='blockEpisode'>
     <h1 class='titleEpisode'><?= $episode['titre'] ?></h1>
-    <a href='<?= 'home.php?option=modifyEpisode&id=' . $episode["id"] ?>'>Modifier cette épisode</a>
+    <a href='<?= 'home.php?rubric=modifyEpisode&id=' . $episode["id"] ?>'>Modifier cette épisode</a>
 </div>
 
 <?php endforeach; ?>
 
-<form method='post' action='home.php?option=modifyEpisode&id=<?= $idEpisode ?>'>
+<form method='post' action='home.php?rubric=modifyEpisode&id=<?= $idEpisode ?>'>
     <label for='idEditEpisode'>ID de l'épisode</label>
     <input type='text' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>

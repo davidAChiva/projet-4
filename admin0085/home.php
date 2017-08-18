@@ -2,18 +2,19 @@
 session_start();
 
 require_once 'Controller/ControllerRubricAdmin.class.php';
-require_once 'Controller/ControllerManageAccountAdmin.class.php';
+require_once 'Controller/ControllerAccountAdmin.class.php';
 
+$accountAdmin = new ControllerAccountAdmin();
 if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
 {   
     // Affiche la page en fonction de la variable option    
-    if (isset($_GET['option']))
+    if (isset($_GET['rubric']))
     {
         // Création des objets
         $manageEpisode = new ControllerRubricAdmin();
         $manageComment = new ControllerRubricAdmin();
         
-        if ($_GET['option'] === 'newEpisode')
+        if ($_GET['rubric'] === 'newEpisode')
         {
             // Affiche la page pour creer un nouvel épisode
             $manageEpisode->displayNewEpisode();
@@ -21,15 +22,15 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             if ((isset($_POST['titleNewEpisode'])) AND (isset($_POST['contentNewEpisode'])))
             {
                 $manageEpisode->newEpisode(($_POST['titleNewEpisode']), ($_POST['contentNewEpisode']));
-                header('Location: home.php?option=newEpisode');
+                header('Location: home.php?rubric=newEpisode');
             }
         }
         
-        else if ($_GET['option'] === 'modifyEpisode' AND (!isset($_GET['id'])))
+        else if ($_GET['rubric'] === 'modifyEpisode' AND (!isset($_GET['id'])))
             {
                 $manageEpisode->displayModifyEpisode();
             }
-        if ($_GET['option'] === 'modifyEpisode' AND (isset($_GET['id'])))
+        if ($_GET['rubric'] === 'modifyEpisode' AND (isset($_GET['id'])))
             {
                 // Modifie un épisode
                 if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
@@ -38,11 +39,11 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
                 }
                 $manageEpisode->displayEpisodeToModify();
             }
-        else if ($_GET['option'] === 'manageComments' AND (!isset($_GET['idEpisode'])))
+        else if ($_GET['rubric'] === 'manageComments' AND (!isset($_GET['idEpisode'])))
         {
             $manageComment->getEpisodes();
         }
-        if ($_GET['option'] === 'manageComments' AND isset($_GET['idEpisode']))
+        if ($_GET['rubric'] === 'manageComments' AND isset($_GET['idEpisode']))
         {
             // Modification du commentaire
             if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'modify' AND (isset($_GET['idComment'])))
@@ -59,9 +60,7 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
     }
     else if (isset($_GET['manageAccount']))
     {
-        $getManageAccountAdmin = new ControllerManageAccountAdmin($_GET['manageAccount']);
-        $getManageAccountAdmin->displayManageAccount();
-        
+        $accountAdmin->deconnexion();    
     }
     else
     {
