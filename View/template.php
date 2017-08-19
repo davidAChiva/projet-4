@@ -9,19 +9,22 @@
     </head>
     <body>
         <header>
+            <div id='bookAlaska'>
+            <h1>BILLET SIMPLE POUR L'ALASKA</h1>    
+            <h2>Livre de Jean Forteroche</h2>    
+            </div>
             <div>
+                <h1>JEAN FORTEROCHE | ECRIVAIN</h1>
                 <p>SUIVEZ MOI</p>
                 <a href=''><i class="fa fa-facebook fa-3x iconeFontAWeSome" aria-hidden="true"></i></a>
                 <a href=''><i class="fa fa-twitter fa-3x iconeFontAWeSome" aria-hidden="true"></i></a>
+                <nav>
+                    <a href='index.php'>ACCUEIL</a>
+                    <a href='contact.php'>CONTACT</a>
+                </nav>
             </div>
-            <h1>JEAN FORTEROCHE | ECRIVAIN</h1>
         </header>
-        <section id='blockBook'>
-            <div id='bookAlaska'>
-            <img src='images/photo-paysage-alaska.jpg' alt='Image paysage en Alaska'> 
-            <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-            <h2>Livre de Jean Forteroche</h2>    
-            </div>
+        <section>
             <?= $sectionContent ?>
         </section>
         <footer>

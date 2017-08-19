@@ -6,26 +6,30 @@ ob_start();
 ?>
 
 <article>
-    <h3><?= $episode['titre'] . " Date : " . $episode['date_creation'] ?></h3>
-    <p><?= $episode['contenu'] ?></p>   
+    <h2><?= $episode['titre'] ?></h2>
+    <p><?= $episode['date_creation'] ?></p>
+    <div id='episodeContent'><?= $episode['contenu'] ?></div>   
 </article>
-
-<div>
-    <h4>Commentaires</h4>
-    
+    <h3>Commentaires de l'épisode</h3>
     <?php foreach ($comments as $comment): ?>
-    <p> <?= $comment['author'] . ' ' . $comment['date_comment'] ?></p>
+<div class='comment'>
+    <p class='pseudoAuthor'> <?= $comment['author'] ?></p> 
+    <p class='dateComment'> <?= $comment['date_comment'] ?></p>
     <p class='commentContent'> <?= $comment['content'] ?></p>
 </div>
 
 <?php endforeach; ?>
 
-<form  method='post' action='comment.php?comment=<?= $episode['id'] ?>'>
-    <input type='text' id='author' name='author' placeholder='Votre pseudo' required /> <br />
-    <textarea id='comment' name='comment' rows='5' placeholder='Votre commentaire' required>
-    </textarea> <br />
-    <input type='submit' value='Commenter' />
-</form>
+<div id='formComment'>
+    <form  method='post' action='comment.php?comment=<?= $episode['id'] ?>'>
+        <label for='author'>Votre pseudo</label> <br />
+        <input type='text' id='formAuthorComment' name='author' required /> <br />
+        <label for='comment'>Votre commentaire</label> <br />
+        <textarea id='comment' name='comment' rows='10' cols='50' placeholder='Votre commentaire' required>
+        </textarea> <br />
+        <input type='submit' value='Commenter' />
+    </form>
+</div>
 
 
 <?php

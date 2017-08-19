@@ -1,6 +1,6 @@
 body
 {  
-    width : 99%;
+    width: 99%;
 }
 h1
 {
@@ -8,69 +8,60 @@ h1
 }
 header
 {
-    color : white;
-    background-color : #60AAC9;
-    height : 150px;
+    color: white;
+    background-color: #518499;
+    height: 300px;
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
 header p
 {
-    font-size : 1.3em;
+    font-size: 1.3em;
 }
 section
 {
     width : 100%;
-    display: flex;
-    justify-content: space-between;
 }
 #bookAlaska
 {
     text-align: center;
-    color : white;
-    width : 55%;
-    height :800px;
-    background-color: #60AAC9;
+    color: white;
+    width: 30%;
+    height:300px;
 }
 #bookAlaska img
 {
     
     background-size: cover;
-    width : 100%;   
+    width: 100%;   
 }
-.blockEpisode
+section
 {
-    color : white;
-    background-color : #60AAC9;
-    margin : 10px;
-    padding-bottom: 5px;
-    width : 99%;
-    border: 2px #0000FF solid;
-    border-radius: 5px;
-    box-shadow: 2px 5px 10px #0000FF;
+    display: flex;
+    color: white;
 }
-.blockEpisode a 
+section a 
 {
     font-size: 1.2em;
-    background-color : white;
-    width : 200px;
-    display : block;
-    margin : auto;
+    background-color: white;
+    width: 200px;
+    display: block;
+    margin: auto;
     text-align: center;
     text-decoration: none;
-    color : #0000FF;
-    border : 2px #0000FF solid;
+    color: #0000FF;
+    border: 2px #0000FF solid;
 }
-.blockEpisode p
+section p
 {
-    font-size : 1.2em;
+    font-size: 1.2em;
 }
 footer
 {
-    color : white;
-    font-size : 1.2em;
-    background-color : #60AAC9;
+    color: white;
+    font-size: 1.2em;
+    background-color: #518499;
     height: 100px;
     text-align: center;
 }

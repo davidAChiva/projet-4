@@ -25,7 +25,6 @@ class ControllerEpisode
     // Ajout d'un commentaire à un épisode
     public function newComment($author, $content, $idEpisode)
     {
-        $this->comment->setComment($author, $content, $idEpisode);
-        
+        $this->comment->setComment($author, $content, $idEpisode);  
     }
 }
