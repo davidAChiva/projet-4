@@ -18,6 +18,13 @@ class Comment extends Model
         $comments = $this->executeRequest($sql, array($idEpisode));
         return $comments;
     }
+    // Récupére les 5 derniers commentaires
+    public function getLastComments()
+    {
+        $sql= 'SELECT id,author,content,date_comment FROM comments ORDER BY id LIMIT 5';
+        $lastComments = $this->executeRequest($sql);
+        return $lastComments;
+    }
     // Ajoute un commentaire à la base
     public function setComment($author, $content, $idEpisode)
     {

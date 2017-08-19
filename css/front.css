@@ -30,6 +30,7 @@ article
     background-color: #518499;
     margin: 10px;
     padding-bottom: 5px;
+    padding-left: 5px;
     border: 2px #0000FF solid;
     border-radius: 5px;
     box-shadow: 2px 5px 10px #0000FF;
@@ -46,6 +47,18 @@ article
     border: 2px #0000FF solid;
     border-radius: 5px;
     box-shadow: 2px 5px 10px #0000FF;
+}
+#blockLastComments
+{
+    text-align: center;
+}
+.lastComment
+{
+    margin: auto;
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
 }
 .comment
 {
