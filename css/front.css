@@ -3,28 +3,6 @@
     text-align: center;
     color : blue;
 }
-h1
-{
-    font-size: 3em;
-}
-h2
-{
-    font-size: 2em;
-}
-h3
-{
-    font-size: 1.5em;
-    text-align: center;
-}
-#blockEpisode
-{
-    width: 50%;    
-}
-article
-{
-    margin: auto;
-    text-align: center;
-}
 .episode
 {
     background-color: #518499;
@@ -37,46 +15,76 @@ article
 }
 #episodeContent
 {
+   padding: 5px;
+   border: 1px #518499 solid;
+   color: black;
+   background-color: white;
    text-align: left;
 }
-#block2
+#propos
 {
-    color: white;
+    margin: 10px;
     background-color: #518499;
-    width: 50%;
+    color: white;
     border: 2px #0000FF solid;
     border-radius: 5px;
     box-shadow: 2px 5px 10px #0000FF;
 }
 #blockLastComments
 {
+    margin: 10px;
+    background-color: #518499;
+    color: white;
+    border: 2px #0000FF solid;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px #0000FF;
     text-align: center;
 }
 .lastComment
 {
+    align-items: top;
     margin: auto;
-    width: 50%;
     border-radius: 5px;
     background-color: white;
     color: black;
 }
 .comment
 {
+    color: black;
     margin: auto;
-    padding-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
     width: 50%;
-    border: 1px grey solid;
+    border: 1px #518499 solid;
     border-radius: 5px;
 }
-.dateComment
+.comment span
 {
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
-.pseudoAuthor
+
+.commentAuthor
 {
+   font-size: 1.4em;
    font-weight: bold;
 }
+.commentContent
+{
+    background-color: white;
+    color : black;
+    
+}
 #formComment
+{
+    background-color: #518499;
+    text-align: center;
+}
+#formComment input,textarea
+{
+    border: 5px #518499 solid;
+}
+form
 {
     margin: auto;
 }

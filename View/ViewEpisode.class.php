@@ -4,22 +4,23 @@ $title = $episode['titre'] . " | Billet simple pour l'Alaska" ;
 ob_start();
 
 ?>
-
+<div>
 <article>
     <h2><?= $episode['titre'] ?></h2>
     <p><?= $episode['date_creation'] ?></p>
     <div id='episodeContent'><?= $episode['contenu'] ?></div>   
 </article>
-    <h3>Commentaires de l'épisode</h3>
+<div id='blockComment'>
+    <h3>COMMENTAIRES DE L'EPISODE</h3>
+
     <?php foreach ($comments as $comment): ?>
-<div class='comment'>
-    <p class='pseudoAuthor'> <?= $comment['author'] ?></p> 
-    <p class='dateComment'> <?= $comment['date_comment'] ?></p>
-    <p class='commentContent'> <?= $comment['content'] ?></p>
-</div>
-
+    <div class='comment'>
+        <p class='commentAuthor'> <?= $comment['author'] ?> <span> <?= $comment['date_comment'] ?></span></p> 
+        <p class='commentContent'> <?= $comment['content'] ?></p>
+    </div>
 <?php endforeach; ?>
-
+</div>
+<h3>AJOUTER UN COMMENTAIRE</h3>
 <div id='formComment'>
     <form  method='post' action='comment.php?comment=<?= $episode['id'] ?>'>
         <label for='author'>Votre pseudo</label> <br />
@@ -29,6 +30,7 @@ ob_start();
         </textarea> <br />
         <input type='submit' value='Commenter' />
     </form>
+</div>
 </div>
 
 

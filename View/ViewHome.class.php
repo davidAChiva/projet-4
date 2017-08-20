@@ -14,7 +14,7 @@ ob_start();
 <?php endforeach; ?>
 </div>
 <div id='block2'>
-    <div id='aPropos'>
+    <div id='propos'>
     <h2>A PROPOS</h2>
         <p>
             Bienvenue sur mon blog ! <br />
@@ -23,11 +23,17 @@ ob_start();
             N'hésitez pas à laisser un commentaire.
         </p>
     </div>
-    <div id='lastComments'>
+    <div id='blockLastComments'>
+    <h2>LES DERNIERS COMMENTAIRES</h2>
+       <?php foreach ($lastComments as $lastComment): ?> 
+        <div class='lastComment'>
+            <p><?= $lastComment['content'] ?></p>
+            <p>écrit par <?= $lastComment['author'] ?></p>
+            <p>Le <?= $lastComment['date_comment'] ?></p>
+        </div>
+        <?php endforeach ?>
     </div>
 </div>
 
 <?php $sectionContent = ob_get_clean(); ?>
 <?php require 'View/template.php'; ?>
-
-

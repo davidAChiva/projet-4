@@ -1,9 +1,11 @@
 ul
 {
+    display: flex;
+    background-color: #60AAC9;
+    color: white;
     font-size: 20px;
     line-height: 100px;
     text-align: center;
-    display: flex;
     list-style: none;
 }
 li
@@ -20,13 +22,6 @@ li a
     height: 100%;
     text-decoration: none;
     color: white;
-}
-#linkOption
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
 }
 #linkOption a
 {

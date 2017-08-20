@@ -1,43 +1,51 @@
 body
 {  
-    width: 99%;
+    margin: auto;
+}
+header,section
+{
+    width: 75%;
 }
 h1
 {
     font-size: 1.5em;
 }
+h2
+{
+    font-size: 2em;
+}
+h3
+{
+    background-color: #518499;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 5px;
+}
 header
 {
+    margin: auto;
     color: white;
     background-color: #518499;
-    height: 300px;
+    height: 150px;
     display: flex;
     justify-content: space-around;
-    width: 100%;
 }
 header p
 {
     font-size: 1.3em;
 }
-section
+#banner
 {
-    width : 100%;
-}
-#bookAlaska
-{
-    text-align: center;
-    color: white;
-    width: 30%;
-    height:300px;
-}
-#bookAlaska img
-{
-    
-    background-size: cover;
-    width: 100%;   
+    margin: auto;
+    width: 75%;
+    height: 500px;
+    border-radius: 0 0 5px 5px;
+    background: url('../images/photo-paysage-alaska.jpg') no-repeat;
+    background-size: 100% 500px;
 }
 section
 {
+    margin: auto;
     display: flex;
     color: white;
 }
@@ -56,6 +64,12 @@ section a
 section p
 {
     font-size: 1.2em;
+}
+article
+{
+    background-color: #518499;
+    margin: auto;
+    text-align: center;
 }
 footer
 {

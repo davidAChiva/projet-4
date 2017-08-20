@@ -10,18 +10,9 @@
     </head>
     <body>
         <header>
-            <ul>
-                <li><a href='home.php'>ACCUEIL</a></li>
-                <li>GERER MON COMPTE</li>
-                <li><a href='home.php?manageAccount=deconnexion'>DECONNEXION</a></li>
-            </ul>
+            <h1>ADMINISTRATION </br > BILLET SIMPLE POUR L'ALASKA</h1>
         </header>
-        <section id='blockBook'>
-            <div id='bookAlaska'>
-            <img src='../images/photo-paysage-alaska.jpg' alt='Image paysage en Alaska'> 
-            <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-            <h2>Livre de Jean Forteroche</h2>    
-            </div>
+        <section>
             <?= $sectionContent ?>
         </section>
         <footer>
