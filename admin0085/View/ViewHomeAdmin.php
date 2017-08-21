@@ -2,12 +2,12 @@
 $title = "Panneau Administration | Billet simple pour l'Alaska";
 ob_start();
 ?>
-<h3>Bienvenue machin</h3>
+<p>Bienvenue <?= $_SESSION['pseudo'] ?></p>
 <h3>Dernier épisode</h3>
 <article>
-    <h2><?= $episode['titre'] ?></h2>
-    <p><?= $episode['date_creation'] ?></p>
-    <div id='episodeContent'><?= $episode['contenu'] ?></div>   
+    <h2><?= $lastEpisode['titre'] ?></h2>
+    <p><?= $lastEpisode['date_creation'] ?></p>
+    <div id='episodeContent'><?= $lastEpisode['contenu'] ?></div>   
 </article>
 <?php
 $sectionContent = ob_get_clean();

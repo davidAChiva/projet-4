@@ -36,9 +36,11 @@ class Episode extends Model
         }
     }
     // Récupére le dernier épisode
-    public function getLastEpisode
+    public function getLastEpisode()
     {
-
+        $sql = 'SELECT id, titre, contenu, date_creation FROM episodes ORDER BY id DESC LIMIT 0,1';
+        $lastEpisode = $this->executeRequest($sql);
+        return $lastEpisode->fetch();
     }
     // Requête pour enregistrer dans la BD le nouvel épisode
     public function setEpisode($title,$content)
