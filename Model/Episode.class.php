@@ -35,6 +35,11 @@ class Episode extends Model
             throw new Exception("Aucun billet ne correspond à l'identifiant" . $idEpisode);
         }
     }
+    // Récupére le dernier épisode
+    public function getLastEpisode
+    {
+
+    }
     // Requête pour enregistrer dans la BD le nouvel épisode
     public function setEpisode($title,$content)
     {

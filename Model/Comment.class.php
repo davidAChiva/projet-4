@@ -21,7 +21,7 @@ class Comment extends Model
     // Récupére les 5 derniers commentaires
     public function getLastComments()
     {
-        $sql= 'SELECT id,author,content,date_comment FROM comments ORDER BY id LIMIT 5';
+        $sql= 'SELECT id,author,content,date_comment FROM comments ORDER BY id DESC LIMIT 5';
         $lastComments = $this->executeRequest($sql);
         return $lastComments;
     }

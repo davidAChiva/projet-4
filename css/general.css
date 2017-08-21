@@ -34,6 +34,12 @@ header p
 {
     font-size: 1.3em;
 }
+nav a
+{
+    text-decoration: none;
+    background-color: #60AAC9;
+    color: white;
+}
 #banner
 {
     margin: auto;

@@ -12,9 +12,21 @@
         <header>
             <h1>ADMINISTRATION </br > BILLET SIMPLE POUR L'ALASKA</h1>
         </header>
+    <div class='mainBlock'>
+        <nav>
+            <a href='home.php'>ACCUEIL</a>
+            <h2>ADMINISTRATION DU COMPTE</h2>
+            <a href=''>GERER MON COMPTE</a>
+            <a href='home.php?manageAccount=deconnexion'>DECONNEXION</a>
+            <h2>ADMINISTRATION EPISODES ET COMMENTAIRES</h2>
+            <a href='home.php?rubric=newEpisode'>CREER UN NOUVEL EPISODE</a>
+            <a href='home.php?rubric=modifyEpisode'>MODIFIER UN EPISODE</a>
+            <a href='home.php?rubric=manageComments'>GERER LES COMMENTAIRES</a>
+        </nav>
         <section>
             <?= $sectionContent ?>
         </section>
+    </div>
         <footer>
             <h4>COPYRIGHT JEAN FORTEROCHE</h4>
         </footer>

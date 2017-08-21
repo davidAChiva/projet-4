@@ -9,7 +9,7 @@ ob_start();
     <h2><?= $episode['titre'] ?></h2>
     <p><?= $episode['date_creation'] ?></p>
     <div id='episodeContent'><?= $episode['contenu'] ?></div>   
-</article>
+    </article>
 <div id='blockComment'>
     <h3>COMMENTAIRES DE L'EPISODE</h3>
 

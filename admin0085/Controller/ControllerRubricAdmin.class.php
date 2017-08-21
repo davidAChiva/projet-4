@@ -17,6 +17,7 @@ class ControllerRubricAdmin
     // Affiche la page d'accueil
     public function displayHome()
     {
+       $episode = $this->episode->getEpisode(1);
        require "View/ViewHomeAdmin.php";
        require_once'View/templateAdmin.php';
     }

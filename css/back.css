@@ -23,17 +23,32 @@ li a
     text-decoration: none;
     color: white;
 }
-#linkOption a
+.mainBlock
 {
-    text-decoration: none;
-    background-color: #60AAC9;
-    color: white;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+nav
+{
+    width: 25%;
+}
+nav a
+{
+    display: block;
     font-size: 20px;
+    margin: 5px 0 5px 0;
     text-align: center;
-    line-height: 200px;
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 125px;
     border: 2px black solid;
+}
+section
+{
+    display: block;
+    width : 75%;
+    margin: top;
 }
 #deleteComment
 {
