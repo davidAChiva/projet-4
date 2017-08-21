@@ -2,7 +2,6 @@
 $title = 'Modifier un épisode | Billet simple pour l\'Alaska';
 ob_start();
 ?>
-<div>
 <h3>Sélectionnez l'épisode à modifier</h3>
 <?php foreach($episodes as $episode): ?>
 
@@ -22,7 +21,6 @@ ob_start();
     <textarea id='contentEditEpisode' name='contentEditEpisode' rows='20'required> <?= $contentEpisode ?> </textarea>
     <input type='submit' value="Modifiez l'épisode" />
 </form>
-</div>
 <?php
 $sectionContent = ob_get_clean();
 ?>

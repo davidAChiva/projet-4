@@ -12,6 +12,7 @@
         <header>
             <h1>ADMINISTRATION </br > BILLET SIMPLE POUR L'ALASKA</h1>
         </header>
+        <div id='banner'></div>
     <div class='mainBlock'>
         <nav>
             <a href='home.php'>ACCUEIL</a>
