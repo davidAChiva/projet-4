@@ -9,7 +9,12 @@ class ControllerAccountAdmin
     {
         $this->accountAdmin = new admin;
     }
-    
+    //Affiche la page pour gérer son compte
+    public function displayManageAccount()
+    {
+        require_once'View/ViewModifyAccount.php';
+        require_once'View/templateAdmin.php';
+    }
     // Controle si les identifiants saisis sont correct
     public function controlLogin($pseudoAdmin,$passwordAdmin)
     {

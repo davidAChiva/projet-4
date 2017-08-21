@@ -13,8 +13,7 @@ ob_start();
 <?php endforeach; ?>
 
 <form method='post' action='home.php?rubric=modifyEpisode&id=<?= $idEpisode ?>'>
-    <label for='idEditEpisode'>ID de l'épisode</label>
-    <input type='text' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />
+    <input type='hidden' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?php echo $titleEpisode; ?>' required /> <br />
     <label for='contentEditEpisode'>CONTENU DE L'EPISODE</label>

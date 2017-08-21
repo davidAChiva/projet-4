@@ -17,7 +17,7 @@
         <nav>
             <a href='home.php'>ACCUEIL</a>
             <h2>ADMINISTRATION DU COMPTE</h2>
-            <a href=''>GERER MON COMPTE</a>
+            <a href='home.php?manageAccount=modify'>GERER MON COMPTE</a>
             <a href='home.php?manageAccount=deconnexion'>DECONNEXION</a>
             <h2>ADMINISTRATION EPISODES ET COMMENTAIRES</h2>
             <a href='home.php?rubric=newEpisode'>CREER UN NOUVEL EPISODE</a>

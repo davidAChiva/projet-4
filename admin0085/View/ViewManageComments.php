@@ -22,8 +22,7 @@ ob_start();
             <p><?= $comment['content'] ?></p>
 
             <form  method='post' action='<?='home.php?rubric=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify&idComment=' . $comment['id'] ?>'>
-                <label for='idComment'>Id du commentaire</label>
-                <input type='text' id='idComment' name='idComment' value='<?= $comment['id'] ?>' required />
+                <input type='hidden' id='idComment' name='idComment' value='<?= $comment['id'] ?>' required />
                 <label for='authorComment'>Auteur du commentaire</label>
                 <input type='text' id='authorComment' name='authorComment' value= "<?= $comment['author'] ?>" required /> <br />
                 <textarea id='contentComment' name='contentComment' rows='5'  required><?= $comment['content'] ?>

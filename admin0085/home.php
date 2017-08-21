@@ -61,7 +61,18 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
     }
     else if (isset($_GET['manageAccount']))
     {
-        $accountAdmin->deconnexion();    
+        // Création de l'objet
+        $manageAccount = new ControllerAccountAdmin();
+        
+        if ($_GET['manageAccount'] === 'deconnexion')
+        {
+            $manageAccount->deconnexion();    
+        }
+        else if ($_GET['manageAccount'] === 'modify')
+        {
+            $manageAccount->displayManageAccount();
+        }
+            
     }
     else
     {
