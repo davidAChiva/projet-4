@@ -63,6 +63,10 @@ section
     display: block;
     width : 75%;
 }
+section p
+{
+    color: black;
+}
 #deleteComment
 {
     text-decoration: none;

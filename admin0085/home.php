@@ -68,9 +68,9 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
         {
             $manageAccount->deconnexion();    
         }
-        else if ($_GET['manageAccount'] === 'modify')
+        else if ($_GET['manageAccount'] === 'modifyInformations')
         {
-            $manageAccount->displayManageAccount();
+            $manageAccount->manageAccount();
         }
             
     }

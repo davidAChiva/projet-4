@@ -15,5 +15,12 @@ class Admin extends Model
         {
             throw new Exception("L'identifiant où le mot de passe est incorrect");
         }
+    }   
+    // change le pseudo du compte d'administration
+    public function setNewPseudoAdmin($oldPseudoAdmin, $newPseudoAdmin)
+    {
+        $sql='UPDATE login_admin SET pseudonym=? WHERE pseudonym=?';
+        $setNewPseudo = $this->executeRequest($sql,array($newPseudoAdmin,$oldPseudoAdmin));
+        return $setNewPseudo;
     }
 }

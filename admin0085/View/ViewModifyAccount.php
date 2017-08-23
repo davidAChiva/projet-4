@@ -4,10 +4,9 @@ $title='Gerer son compte | Billet simple pour l\'Alaska';
 ob_start();
 ?>
 <h3>MODIFIER LE PSEUDO</h3>
-<form method='post' action='home.php?manageAccount=modify&pseudo=modify'>
-    <label for='oldPseudo'>PSEUDO ACTUEL</label>
-    <input type='text' id='oldPseudo' name='oldPseudo'value='<?= $_SESSION['pseudo'] ?>' required /> <br />
-    <label for='newPseudo'>SAISSISEZ LE NOUVEAU PSEUDO</label>
+<p>Pseudo actuel : <?= $_SESSION['pseudo'] ?></p>
+<form method='post' action='home.php?manageAccount=modifyInformations'>
+    <label for='newPseudo'>SAISISSEZ LE NOUVEAU PSEUDO</label>
     <input type='text' id='newPseudo' name='newPseudo' required /> <br />
     <input type='submit' value='Modifier le pseudo' />
 </form>
