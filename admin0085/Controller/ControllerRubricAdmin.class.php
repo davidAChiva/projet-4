@@ -21,19 +21,19 @@ class ControllerRubricAdmin
        require "View/ViewHomeAdmin.php";
        require_once'View/templateAdmin.php';
     }
-    //Affiche la page creer épisode
-    public function displayNewEpisode()
+    //Affiche la page creer épisode et gére le formulaire
+    public function newEpisode()
     {
+    // Ajouter un nouvel épisode
+    if ((isset($_POST['titleNewEpisode'])) AND (isset($_POST['contentNewEpisode'])))
+    {
+        $this->episode->setEpisode(($_POST['titleNewEpisode']), ($_POST['contentNewEpisode']));
+        header('Location: home.php');
+        exit;
+    }
         require_once 'View/ViewCreateEpisode.php';
         require_once 'View/templateAdmin.php';
     }
-    
-    // Creer le nouvel épisode dans la base de donnée
-    public function newEpisode($title, $content)
-    {
-        $this->episode->setEpisode($title,$content);
-    }
-    
     // Affiche la page modifier épisode
     public function displayModifyEpisode()
     {
@@ -46,13 +46,21 @@ class ControllerRubricAdmin
     }
     
     // Affiche l'épisode à modifié
-    public function displayEpisodeToModify()
+    public function modifyEpisode()
     {
         $episodes = $this->episode->getEpisodes();
         $episode = $this->episode->getEpisode($_GET['id']);
         $idEpisode = $episode['id'];
         $titleEpisode = $episode['titre'];
         $contentEpisode = $episode['contenu'];
+        
+        // Modifie un épisode
+        if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
+        {
+            $this->episode->modifyEpisode($_POST['idEditEpisode'],$_POST['titleEditEpisode'],$_POST['contentEditEpisode']);
+            header('Location: home.php?rubric=modifyEpisode&id=' . $_GET['id']);
+            exit;
+        }
         require_once 'View/ViewModifyEpisode.php';
         require_once 'View/templateAdmin.php';
     }
@@ -72,15 +80,7 @@ class ControllerRubricAdmin
         require_once 'View/ViewManageComments.php';
         require_once 'View/templateAdmin.php';
         
-    }
-    // modifie l'épisode
-    public function modifyEpisode($id,$title,$content)
-    {
-        $this->episode->modifyEpisode($id,$title,$content);
-        header('Location:home.php?rubric=modifyEpisode&id=' . $_GET['id']);
-        exit;
-    }
-    
+    }   
     // Supprime un commentaire
     public function deleteComment($idEpisode)
     {
