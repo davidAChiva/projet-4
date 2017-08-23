@@ -11,13 +11,14 @@ ob_start();
     <input type='submit' value='Modifier le pseudo' />
 </form>
 <h3>MODIFIER LE MOT DE PASSE</h3>
-<form method='post' action='home.php?manageAccount=modify&password=modify'>
+<form method='post' action='home.php?manageAccount=modifyInformations'>
     <label for='oldPassword'>SAISISSEZ VOTRE ANCIEN MOT DE PASSE</label>
-    <input type='text' id='oldPassword' name='oldPassword' required /> <br />
+    <input type='password' id='oldPassword' name='oldPassword' required /> <br />
     <label for='newPassword'>SAISISSEZ VOTRE NOUVEAU MOT DE PASSE</label>
-    <input type='password' id='oldPassword' name='oldPassword' required/> <br />
+    <input type='password' id='newPassword' name='newPassword' required/> <br />
     <label for='retypePassword'>RESAISISSEZ VOTRE NOUVEAU MOT DE PASSE</label>
-    <input type='password' id='retypePassword' name='retypePassword' required />
+    <input type='password' id='retypePassword' name='retypePassword' required /> <br />
+    <input type='submit' value='Modifier le mot de passe' />
 </form>
 <?php 
 $sectionContent=ob_get_clean();

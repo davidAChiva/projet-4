@@ -19,8 +19,15 @@ class Admin extends Model
     // change le pseudo du compte d'administration
     public function setNewPseudoAdmin($oldPseudoAdmin, $newPseudoAdmin)
     {
-        $sql='UPDATE login_admin SET pseudonym=? WHERE pseudonym=?';
+        $sql = 'UPDATE login_admin SET pseudonym=? WHERE pseudonym=?';
         $setNewPseudo = $this->executeRequest($sql,array($newPseudoAdmin,$oldPseudoAdmin));
         return $setNewPseudo;
+    }
+    // change le mot de passe du compte d'administration
+    public function setNewPasswordAdmin($pseudoAdmin, $newPasswordAdmin)
+    {
+        $sql = 'UPDATE login_admin SET password =? WHERE pseudonym =?';
+        $setNewPassword = $this->executeRequest($sql, array($newPasswordAdmin, $pseudoAdmin));
+        return $setNewPassword;
     }
 }
