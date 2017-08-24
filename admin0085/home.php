@@ -17,15 +17,20 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             $ctrlRubric->newEpisode();
         }
         
-        else if ($_GET['rubric'] === 'modifyEpisode' AND (!isset($_GET['id'])))
-            {
+        else if ($_GET['rubric'] === 'modifyEpisode')
+            {  
+                if (isset($_GET['id']) AND (!isset($_GET['typeManage'])))
+                {
+                    $ctrlRubric->modifyEpisode();    
+                }
+                else if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete')
+                {
+                $ctrlRubric->deleteEpisode($_GET['id']);
+                }
+                
                 $ctrlRubric->displayModifyEpisode();
             }
         
-        if ($_GET['rubric'] === 'modifyEpisode' AND (isset($_GET['id'])))
-            {
-                $ctrlRubric->modifyEpisode();
-            }
         
         else if ($_GET['rubric'] === 'manageComments' AND (!isset($_GET['idEpisode'])))
         {

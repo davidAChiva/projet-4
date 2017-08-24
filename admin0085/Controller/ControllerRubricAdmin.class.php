@@ -45,7 +45,7 @@ class ControllerRubricAdmin
         require_once 'View/templateAdmin.php';
     }
     
-    // Affiche l'épisode à modifié
+    // Affiche l'épisode à modifié et gére la modification
     public function modifyEpisode()
     {
         $episodes = $this->episode->getEpisodes();
@@ -63,6 +63,12 @@ class ControllerRubricAdmin
         }
         require_once 'View/ViewModifyEpisode.php';
         require_once 'View/templateAdmin.php';
+    }
+    public function deleteEpisode($id)
+    {
+        $this->episode->deleteEpisode($id);
+        header('Location: home.php?rubric=modifyEpisode');
+        exit;
     }
     // Affiche tous les épisodes
     public function getEpisodes()

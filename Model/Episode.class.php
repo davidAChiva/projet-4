@@ -56,4 +56,11 @@ class Episode extends Model
         $modifyEpisode = $this->executeRequest($sql, array($title,$content,$id));
         return $modifyEpisode;
     }
+    // Supprime un épisode existant
+    public function deleteEpisode($id)
+    {
+        $sql = 'DELETE from episodes WHERE id = ?';
+        $deleteEpisode = $this->executeRequest($sql, array($id));
+        return $deleteEpisode;
+    }
 }
