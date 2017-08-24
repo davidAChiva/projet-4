@@ -65,7 +65,7 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
     else
     {
         $ctrlRubric = new ControllerRubricAdmin();
-        $ctrlRubric->displayHome();
+        $ctrlRubric->home();
     }
 }
 else

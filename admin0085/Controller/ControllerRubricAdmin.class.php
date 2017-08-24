@@ -15,7 +15,7 @@ class ControllerRubricAdmin
         $this->comment = new Comment;
     }
     // Affiche la page d'accueil
-    public function displayHome()
+    public function home()
     {
        $lastEpisode = $this->episode->getlastEpisode();
        require "View/ViewHomeAdmin.php";

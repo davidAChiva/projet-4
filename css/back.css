@@ -20,6 +20,30 @@ header h1
     font-size: 1.4em;
     color: black;
 }
+table
+{
+    margin: auto;
+    margin-bottom: 30px;
+    color: black;
+}
+table h2
+{
+    background-color: #518499;
+    border-radius: 5px;
+    color: white;
+}
+table th
+{
+    font-size: 2em;
+}
+table td a
+{
+    
+}
+.titleEpisode
+{
+    font-size: 1.4em;
+}
 .mainBlock
 {
     margin: auto;

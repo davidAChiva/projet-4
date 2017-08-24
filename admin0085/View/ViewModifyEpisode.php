@@ -2,16 +2,22 @@
 $title = 'Modifier un épisode | Billet simple pour l\'Alaska';
 ob_start();
 ?>
-<h3>Sélectionnez l'épisode à modifier</h3>
+<table>
+<caption><h2>GERER LES COMMENTAIRES</h2></caption>
+    <tr>
+        <th>Titre de l'épisode</th>
+        <th colspan='2'>Action</th>
+    </tr>
 <?php foreach($episodes as $episode): ?>
 
-<div class='blockEpisode'>
-    <h1 class='titleEpisode'><?= $episode['titre'] ?></h1>
-    <a href='<?= 'home.php?rubric=modifyEpisode&id=' . $episode["id"] ?>'>Modifier cette épisode</a>
-</div>
+    <tr class='blockEpisode'>
+        <td class='titleEpisode'><?= $episode['titre'] ?></td>
+        <td><a href='home.php?rubric=modifyEpisode&id= <?= $episode["id"] ?>'>Modifier</a></td>
+        <td><a href=''>Supprimer</a></td>
+    </tr>
 
 <?php endforeach; ?>
-
+</table>
 <form method='post' action='home.php?rubric=modifyEpisode&id=<?= $idEpisode ?>'>
     <input type='hidden' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
