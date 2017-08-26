@@ -13,12 +13,19 @@ require_once '../Framework/Model.class.php';
 
 class Episode extends Model
 {
-    // Requête pour obtenir la liste de tous les épisodes
-    public function getEpisodes()
+    // Requête pour obtenir la liste de tous les épisodes dans l'ordre décroissant
+    public function getEpisodesDesc()
     {
         $sql = 'SELECT id, titre, contenu, date_creation FROM episodes ORDER BY id DESC';
         $episodes = $this->executeRequest($sql);
         return $episodes;
+    }
+    //Requête pour obtenir la liste de tous les épisodes dans l'ordre croissant
+    public function getEpisodesAsc()
+    {
+        $sql = 'SELECT id, titre, contenu, date_creation FROM episodes ORDER BY id';
+        $episodes = $this->executeRequest($sql);
+        return $episodes;    
     }
     
     // Affichage d'un seul épisode

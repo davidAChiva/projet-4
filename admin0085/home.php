@@ -21,11 +21,13 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             {  
                 if (isset($_GET['id']) AND (!isset($_GET['typeManage'])))
                 {
+                    // Affiche et modifie l'épisode
                     $ctrlRubric->modifyEpisode();    
                 }
-                else if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete')
+                else if (isset($_GET['id']) AND isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete')
                 {
-                $ctrlRubric->deleteEpisode($_GET['id']);
+                    // Supprime l'épisode
+                    $ctrlRubric->deleteEpisode($_GET['id']);
                 }
                 
                 $ctrlRubric->displayModifyEpisode();

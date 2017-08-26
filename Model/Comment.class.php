@@ -46,4 +46,9 @@ class Comment extends Model
         $deleteComment = $this->executeRequest($sql,array($idComment));
         return $deleteComment;
     }
+    // Jointure 'episodes & commentaires'
+    public function getCommentsEpisodes
+    {
+        
+    }
 }

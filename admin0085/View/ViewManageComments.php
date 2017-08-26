@@ -2,38 +2,38 @@
 $title = 'Gérer les commentaires | Billet simple pour l\'Alaska';
 ob_start();
 ?>
-<div>
     <h3>Sélectionnez l'épisode des commentaires à modifier</h3>
-
+    <div id='linkEpisode'>
     <?php foreach($episodes as $episode): ?>
-
-    <div class='blockEpisode'>
-        <h1 class='titleEpisode'><?= $episode['titre'] ?></h1>
-        <a href='<?= 'home.php?rubric=manageComments&idEpisode=' . $episode["id"] ?>'>Gérer les commentaires de cette épisode</a>
-    </div>
-
+        <a class='na' href='<?= 'home.php?rubric=manageComments&idEpisode=' . $episode["id"] ?>'><?= $episode['titre'] ?></a>
     <?php endforeach; ?>
+     </div>
 
     <div class='blockComments'>
-        <h2> Commentaires de l'épisode</h2>
-    <?php foreach($comments as $comment): ?>
+    
         <div class='comment'>
-            <p><?= $comment['author'] ?></p>
-            <p><?= $comment['content'] ?></p>
+            <table>
+                <caption><h2>Commentaires de l'épisode</h2></caption>
+                    <tr>
+                        <th>Auteur</th>
+                        <th>Contenu</th>
+                        <th colspan='2'>Action</th>
+                    </tr>
+                    <?php foreach($comments as $comment): ?>
 
-            <form  method='post' action='<?='home.php?rubric=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=modify&idComment=' . $comment['id'] ?>'>
-                <input type='hidden' id='idComment' name='idComment' value='<?= $comment['id'] ?>' required />
-                <label for='authorComment'>Auteur du commentaire</label>
-                <input type='text' id='authorComment' name='authorComment' value= "<?= $comment['author'] ?>" required /> <br />
-                <textarea id='contentComment' name='contentComment' rows='5'  required><?= $comment['content'] ?>
-                </textarea> <br />
-                <input type='submit' value='Modifier le commentaire' />
-            </form> <br />
-            <a id='deleteComment' href='<?='home.php?rubric=manageComments&idEpisode=' . $_GET['idEpisode'] . '&typeManage=delete&idComment=' .  $comment['id'] ?>'>Supprimer ce commentaire</a>
+                    <tr>
+                        <form method='post' action='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>
+                            <input type='text' id='idComment' name='idComment' value='<?= $comment['id'] ?>'hidden></input>
+                            <td><input type='text' id='authorComment' name='authorComment' value='<?= $comment['author'] ?>'></input></td>
+                            <td><textarea id='contentComment' name='contentComment' rows='10'><?= $comment['content'] ?></textarea></td>
+                            <td><input type='submit' value='Modifier' </input></td>
+                        </form>
+                        <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
+                    </tr>
+                    <?php endforeach; ?>
+            </table>
         </div>
-    <?php endforeach; ?>
     </div>
-</div>
 <?php
 $sectionContent = ob_get_clean();
 ?>

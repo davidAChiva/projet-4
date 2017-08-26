@@ -37,7 +37,7 @@ class ControllerRubricAdmin
     // Affiche la page modifier épisode
     public function displayModifyEpisode()
     {
-        $episodes = $this->episode->getEpisodes();
+        $episodes = $this->episode->getEpisodesDesc();
         $idEpisode = null;
         $titleEpisode = null;
         $contentEpisode = null;
@@ -48,7 +48,7 @@ class ControllerRubricAdmin
     // Affiche l'épisode à modifié et gére la modification
     public function modifyEpisode()
     {
-        $episodes = $this->episode->getEpisodes();
+        $episodes = $this->episode->getEpisodesDesc();
         $episode = $this->episode->getEpisode($_GET['id']);
         $idEpisode = $episode['id'];
         $titleEpisode = $episode['titre'];
@@ -73,7 +73,7 @@ class ControllerRubricAdmin
     // Affiche tous les épisodes
     public function getEpisodes()
     {
-        $episodes = $this->episode->getEpisodes();
+        $episodes = $this->episode->getEpisodesAsc();
         $comments = $this->comment->getComments(null); 
         require_once 'View/ViewManageComments.php';
         require_once 'View/templateAdmin.php';
@@ -81,7 +81,7 @@ class ControllerRubricAdmin
     // Affiche les commentaires d'un épisode
     public function getComments($idEpisode)
     {
-        $episodes = $this->episode->getEpisodes();
+        $episodes = $this->episode->getEpisodesAsc();
         $comments = $this->comment->getComments($idEpisode);
         require_once 'View/ViewManageComments.php';
         require_once 'View/templateAdmin.php';

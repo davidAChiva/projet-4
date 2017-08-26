@@ -36,10 +36,6 @@ table th
 {
     font-size: 2em;
 }
-table td a
-{
-    
-}
 .titleEpisode
 {
     font-size: 1.4em;
@@ -97,4 +93,22 @@ section p
     padding: 5px;
     border : 2px black solid;
     color: black;
+}
+/* Lien pour accéder aux commentaires d'un épisode */
+#linkEpisode
+{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+#linkEpisode a
+{
+    display: inline-block;
+    width: 20%;
+    height: 100px;
+}
+.contentCommment
+{
+    display: inline-block;
+    width: 200px;
 }

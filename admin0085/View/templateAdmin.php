@@ -6,7 +6,7 @@
         <link rel='stylesheet' href='../css/back.css' />
         <title><?= $title ?></title>
         <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=fju9kgi13tqikw0xs5l829etnxom79m8xc1wcq4q059guf6h'></script>
-        <script>tinymce.init({ selector:'textarea' });</script>
+        <script>tinymce.init({ mode: 'exact',elements:'contentEditEpisode,contentNewEpisode'});</script>
     </head>
     <body>
         <header>
