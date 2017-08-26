@@ -1,6 +1,7 @@
 <?php
-require 'Controller/ControllerHome.class.php';
-require 'Controller/ControllerEpisode.class.php';
+require 'Controller/ControllerFront.class.php';
+
+$ctrlFront = new ControllerFront;
 
 if (isset($_GET['episode']))
 {
@@ -8,14 +9,12 @@ if (isset($_GET['episode']))
     
     if ($idEpisode != 0)
     {
-        $getEpisode = new ControllerEpisode();
-        $getEpisode->episode($idEpisode);
+        $ctrlFront->episode($idEpisode);
     }
 }
 else 
 {
-$getController = new ControllerHome();
-$getController->getHome();
+$ctrlFront->getHome();
 }
 
 

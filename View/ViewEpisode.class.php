@@ -22,7 +22,7 @@ ob_start();
 </div>
 <h3>AJOUTER UN COMMENTAIRE</h3>
 <div id='formComment'>
-    <form  method='post' action='comment.php?comment=<?= $episode['id'] ?>'>
+    <form  method='post' action='index.php?episode= <?= $_GET['episode'] ?>'>
         <label for='author'>Votre pseudo</label> <br />
         <input type='text' id='formAuthorComment' name='author' required /> <br />
         <label for='comment'>Votre commentaire</label> <br />
