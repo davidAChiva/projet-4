@@ -12,7 +12,7 @@
             <input type='text' id='pseudoAdmin' name='pseudoAdmin' required /> <br />
             <label for='passwordAdmin'>Votre mot de passe</label>
             <input type='password' id='passwordAdmin' name='passwordAdmin' required /> <br />
-            <input type='submit' value='Envoyer' />
+            <input class='submit' type='submit' value='Envoyer' />
         </form>
     </body>
 </html>

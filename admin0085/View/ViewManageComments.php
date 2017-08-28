@@ -26,7 +26,7 @@ ob_start();
                             <input type='text' id='idComment' name='idComment' value='<?= $comment['id'] ?>'hidden></input>
                             <td><input type='text' id='authorComment' name='authorComment' value='<?= $comment['author'] ?>'></input></td>
                             <td><textarea id='contentComment' name='contentComment' rows='10'><?= $comment['content'] ?></textarea></td>
-                            <td><input type='submit' value='Modifier' </input></td>
+                            <td><input class='submit'type='submit' value='Modifier' </input></td>
                         </form>
                         <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
                     </tr>

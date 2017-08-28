@@ -71,6 +71,18 @@ section p
 {
     font-size: 1.2em;
 }
+.submit
+{
+    font-size: 1.2em;
+    background-color: white;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    color: #0000FF;
+    border: 2px #0000FF solid;   
+}
 article
 {
     background-color: #518499;

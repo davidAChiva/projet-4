@@ -28,7 +28,7 @@ ob_start();
         <label for='comment'>Votre commentaire</label> <br />
         <textarea id='comment' name='comment' rows='10' cols='50' placeholder='Votre commentaire' required>
         </textarea> <br />
-        <input type='submit' value='Commenter' />
+        <input class='submit'type='submit' value='Commenter' />
     </form>
 </div>
 </div>

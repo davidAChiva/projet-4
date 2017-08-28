@@ -8,7 +8,7 @@ ob_start();
 <form method='post' action='home.php?manageAccount=modifyInformations'>
     <label for='newPseudo'>SAISISSEZ LE NOUVEAU PSEUDO</label>
     <input type='text' id='newPseudo' name='newPseudo' required /> <br />
-    <input type='submit' value='Modifier le pseudo' />
+    <input class='submit' type='submit' value='Modifier le pseudo' />
 </form>
 <h3>MODIFIER LE MOT DE PASSE</h3>
 <form method='post' action='home.php?manageAccount=modifyInformations'>
@@ -18,7 +18,7 @@ ob_start();
     <input type='password' id='newPassword' name='newPassword' required/> <br />
     <label for='retypePassword'>RESAISISSEZ VOTRE NOUVEAU MOT DE PASSE</label>
     <input type='password' id='retypePassword' name='retypePassword' required /> <br />
-    <input type='submit' value='Modifier le mot de passe' />
+    <input class='submit' type='submit' value='Modifier le mot de passe' />
 </form>
 <?php 
 $sectionContent=ob_get_clean();

@@ -24,7 +24,7 @@ ob_start();
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?php echo $titleEpisode; ?>' required /> <br />
     <label for='contentEditEpisode'>CONTENU DE L'EPISODE</label>
     <textarea id='contentEditEpisode' name='contentEditEpisode' rows='30'required> <?= $contentEpisode ?> </textarea>
-    <input type='submit' value="Modifiez l'épisode" />
+    <input class='submit' type='submit' value="Modifiez l'épisode" />
 </form>
 <?php
 $sectionContent = ob_get_clean();
