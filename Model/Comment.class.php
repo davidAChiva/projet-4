@@ -14,14 +14,14 @@ class Comment extends Model
     // Liste des commentaires de l'épisode concerné
     public function getComments($idEpisode)
     {
-        $sql = 'SELECT id,author,content,date_comment,episode_id FROM comments WHERE episode_id=?';
+        $sql = 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment,episode_id FROM comments WHERE episode_id=?';
         $comments = $this->executeRequest($sql, array($idEpisode));
         return $comments;
     }
     // Récupére les 5 derniers commentaires
     public function getLastComments()
     {
-        $sql= 'SELECT id,author,content,date_comment FROM comments ORDER BY id DESC LIMIT 5';
+        $sql= 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment FROM comments ORDER BY id DESC LIMIT 5';
         $lastComments = $this->executeRequest($sql);
         return $lastComments;
     }

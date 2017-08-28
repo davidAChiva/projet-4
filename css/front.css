@@ -84,6 +84,11 @@
 {
     border: 5px #518499 solid;
 }
+.lastCommentContent
+{
+   text-align: left;
+   padding: 5px;
+}
 form
 {
     margin: auto;

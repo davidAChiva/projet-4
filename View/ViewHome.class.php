@@ -27,7 +27,7 @@ ob_start();
     <h2>LES DERNIERS COMMENTAIRES</h2>
        <?php foreach ($lastComments as $lastComment): ?> 
         <div class='lastComment'>
-            <p><?= $lastComment['content'] ?></p>
+            <p class='lastCommentContent'><?= $lastComment['content'] ?></p>
             <p>écrit par <?= $lastComment['author'] ?></p>
             <p>Le <?= $lastComment['date_comment'] ?></p>
         </div>
