@@ -27,7 +27,7 @@ class ControllerRubricAdmin
     // Ajouter un nouvel épisode
     if ((isset($_POST['titleNewEpisode'])) AND (isset($_POST['contentNewEpisode'])))
     {
-        $this->episode->setEpisode(($_POST['titleNewEpisode']), ($_POST['contentNewEpisode']));
+        $this->episode->setEpisode((strip_tags($_POST['titleNewEpisode'])), ($_POST['contentNewEpisode']));
         header('Location: home.php');
         exit;
     }
@@ -57,7 +57,7 @@ class ControllerRubricAdmin
         // Modifie un épisode
         if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
         {
-            $this->episode->modifyEpisode($_POST['idEditEpisode'],$_POST['titleEditEpisode'],$_POST['contentEditEpisode']);
+            $this->episode->modifyEpisode($_POST['idEditEpisode'],strip_tags($_POST['titleEditEpisode']),$_POST['contentEditEpisode']);
             header('Location: home.php?rubric=modifyEpisode&id=' . $_GET['id']);
             exit;
         }
