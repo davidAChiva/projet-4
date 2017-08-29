@@ -28,7 +28,7 @@ class ControllerFront
         $comments = $this->comment->getComments($idEpisode);
         if (isset($_POST['author']) AND isset($_POST['comment']))
         {
-            $this->comment->setComment(htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']), $idEpisode); 
+            $this->comment->setComment(htmlspecialchars($_POST['author']), nl2br(strip_tags($_POST['comment'])), $idEpisode); 
             header('Location: index.php?episode=' . $idEpisode);
             exit;
         }
