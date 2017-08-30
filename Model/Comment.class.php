@@ -46,4 +46,10 @@ class Comment extends Model
         $deleteComment = $this->executeRequest($sql,array($idComment));
         return $deleteComment;
     }
+    public function deleteCommentsEpisode($idEpisode)
+    {
+        $sql = 'DELETE FROM comments WHERE episode_id=?';
+        $deleteCommentsEpisode =$this->executeRequest($sql, array($idEpisode));
+        return $deleteCommentsEpisode;
+    }
 }

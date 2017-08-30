@@ -67,6 +67,7 @@ class ControllerRubricAdmin
     public function deleteEpisode($id)
     {
         $this->episode->deleteEpisode($id);
+        $this->comment->deleteCommentsEpisode($id);
         header('Location: home.php?rubric=modifyEpisode');
         exit;
     }
