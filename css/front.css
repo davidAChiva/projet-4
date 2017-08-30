@@ -103,3 +103,7 @@ form
 {
     margin: auto;
 }
+.errorMessage
+{
+    color: red;
+}

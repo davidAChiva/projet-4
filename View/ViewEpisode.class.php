@@ -26,11 +26,12 @@ ob_start();
         <label for='author'>Votre pseudo</label> <br />
         <input type='text' id='formAuthorComment' name='author' required /> <br />
         <label for='comment'>Votre commentaire</label> <br />
-        <textarea id='comment' name='comment' rows='10' cols='50' placeholder='Votre commentaire' required>
+        <textarea id='comment' name='comment' rows='10' cols='30' required>
         </textarea> <br />
         <input class='submit'type='submit' value='Commenter' />
     </form>
 </div>
+    <p class='errorMessage'><?= $errorMessage ?></p>
 </div>
 
 
