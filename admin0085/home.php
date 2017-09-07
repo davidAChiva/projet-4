@@ -18,42 +18,51 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
         }
         
         else if ($_GET['rubric'] === 'modifyEpisode')
-            {  
-                if (isset($_GET['id']) AND (!isset($_GET['typeManage'])))
+        {  
+            if (isset($_GET['id']) AND isset($_GET['typeManage']))
+            {
+                if ($_GET['typeManage'] === 'modify')
                 {
                     // Affiche et modifie l'épisode
                     $ctrlRubric->modifyEpisode();    
                 }
-                else if (isset($_GET['id']) AND isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete')
+                    else if ($_GET['typeManage'] === 'delete')
                 {
                     // Supprime l'épisode
                     $ctrlRubric->deleteEpisode($_GET['id']);
                 }
-                
-                $ctrlRubric->displayModifyEpisode();
             }
-        
-        
-        else if ($_GET['rubric'] === 'manageComments' AND (!isset($_GET['idEpisode'])))
-        {
-            $ctrlRubric->getEpisodes();
+            $ctrlRubric->displayModifyEpisode();
         }
-        
-        if ($_GET['rubric'] === 'manageComments' AND isset($_GET['idEpisode']))
+         
+        else if ($_GET['rubric'] === 'manageComments')
         {
-            // Modification du commentaire
-            if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'modify' AND (isset($_GET['idComment'])))
+            if (!isset($_GET['idEpisode']))
             {
-                $ctrlRubric->modifyComment($_POST['idComment'],$_POST['authorComment'],$_POST['contentComment']);
+                $ctrlRubric->getEpisodes();
             }
-            // Suppression du commentaire
-            if (isset($_GET['typeManage']) AND $_GET['typeManage'] === 'delete' AND (isset($_GET['idComment'])))
+            
+            else
             {
-                $ctrlRubric->deleteComment($_GET['idComment']); 
+                if (isset($_GET['typeManage']))
+                {
+                    // Modification du commentaire
+                    if ($_GET['typeManage'] === 'modify')
+                    {
+                        $ctrlRubric->modifyComment($_POST['idComment'],$_POST['authorComment'],$_POST['contentComment']);
+                    }
+                    else if ($_GET['typeManage'] === 'delete')
+                    // Suppression du commentaire
+                    {
+                        $ctrlRubric->deleteComment($_GET['idComment']);   
+                    }
+                }
+                // Affiche les commentaires d'un épisode
+                $ctrlRubric->getComments($_GET['idEpisode']);
             }
-            $ctrlRubric->getComments($_GET['idEpisode']);        
         }
     }
+    
     else if (isset($_GET['manageAccount']))
     {
         // Création de l'objet
@@ -69,12 +78,14 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             $ctrlAccount->manageAccount();
         }          
     }
+    
     else
     {
         $ctrlRubric = new ControllerRubricAdmin();
         $ctrlRubric->home();
     }
 }
+
 else
 {
     header('Location:index.php');

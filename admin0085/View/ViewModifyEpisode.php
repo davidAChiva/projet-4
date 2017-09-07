@@ -12,13 +12,13 @@ ob_start();
 
     <tr class='blockEpisode'>
         <td class='titleEpisode'><?= $episode['titre'] ?></td>
-        <td><a href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>'>Modifier</a></td>
+        <td><a href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=modify'>Modifier</a></td>
         <td><a href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=delete'>Supprimer</a></td>
     </tr>
 
 <?php endforeach; ?>
 </table>
-<form method='post' action='home.php?rubric=modifyEpisode&id=<?= $idEpisode ?>'>
+<form method='post' action='home.php?rubric=modifyEpisode&id=<?= $idEpisode ?>&typeManage=modify'>
     <input type='hidden' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?php echo $titleEpisode; ?>' required /> <br />

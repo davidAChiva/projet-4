@@ -51,19 +51,18 @@ class ControllerRubricAdmin
     // Affiche l'épisode à modifié et gére la modification
     public function modifyEpisode()
     {
+        // Modifie un épisode
+        if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
+        {
+            $this->episode->modifyEpisode($_POST['idEditEpisode'],strip_tags($_POST['titleEditEpisode']),$_POST['contentEditEpisode']);
+        }
+        
         $episodes = $this->episode->getEpisodesDesc();
         $episode = $this->episode->getEpisode($_GET['id']);
         $idEpisode = $episode['id'];
         $titleEpisode = $episode['titre'];
         $contentEpisode = $episode['contenu'];
-        
-        // Modifie un épisode
-        if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
-        {
-            $this->episode->modifyEpisode($_POST['idEditEpisode'],strip_tags($_POST['titleEditEpisode']),$_POST['contentEditEpisode']);
-            header('Location: home.php?rubric=modifyEpisode&id=' . $_GET['id']);
-            exit;
-        }
+
         require_once 'View/ViewModifyEpisode.php';
         require_once 'View/templateAdmin.php';
     }
