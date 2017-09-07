@@ -17,6 +17,7 @@ ob_start();
     </tr>
 
 <?php endforeach; ?>
+    
 </table>
 <form method='post' action='home.php?rubric=modifyEpisode&id=<?= $idEpisode ?>&typeManage=modify'>
     <input type='hidden' id='idEditEpisode' name='idEditEpisode' value='<?php echo $idEpisode; ?>' required />

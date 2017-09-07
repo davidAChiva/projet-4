@@ -1,7 +1,7 @@
 <?php
 require 'Controller/ControllerFront.class.php';
 
-$ctrlFront = new ControllerFront;
+$ctrlFrontOffice = new ControllerFrontOffice;
 
 if (isset($_GET['episode']))
 {
@@ -9,12 +9,19 @@ if (isset($_GET['episode']))
     
     if ($idEpisode != 0)
     {
-        $ctrlFront->episode($idEpisode);
+        $ctrlFrontOffice->episode($idEpisode);
+    }
+}
+else if (isset($_GET['information']))
+{
+    if ($_GET['information'] === 'mentions')
+    {
+        $ctrlFrontOffice->mentions();    
     }
 }
 else 
 {
-$ctrlFront->getHome();
+    $ctrlFrontOffice->home();
 }
 
 

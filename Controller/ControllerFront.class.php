@@ -3,7 +3,7 @@
 require_once 'Model/Episode.class.php';
 require_once 'Model/Comment.class.php';
 
-class ControllerFront
+class ControllerFrontOffice
 {
     private $episode;
     private $comment;
@@ -15,7 +15,7 @@ class ControllerFront
     }
     
     // Affiche les éléments de la page d'accueil
-    public function getHome()
+    public function home()
     {
        $episodes = $this->episode->getEpisodesDesc();
        $lastComments = $this->comment->getLastComments();
@@ -46,5 +46,10 @@ class ControllerFront
             
         }
         require_once 'View/ViewEpisode.class.php';
+    }
+    // Affiche les mentions légales
+    public function mentions()
+    {
+        require_once 'View/ViewMentions.class.php';
     }
 }
