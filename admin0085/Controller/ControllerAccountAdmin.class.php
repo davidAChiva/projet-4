@@ -12,8 +12,6 @@ class ControllerAccountAdmin
     // Gére la connexion
     public function connexion()
     {   
-        require_once 'View/ViewConnexion.php';
-        
         if (isset($_POST['pseudoAdmin']) AND isset($_POST['passwordAdmin']))
         {
             $pseudoKey = htmlspecialchars($_POST['pseudoAdmin']);
@@ -33,6 +31,7 @@ class ControllerAccountAdmin
                 header('Location: home.php');
             }
         }
+        require_once 'View/ViewConnexion.php';
     }
     //Gére le changement de pseudo ou mot de passe
     public function manageAccount()

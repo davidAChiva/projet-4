@@ -15,14 +15,18 @@
         <div id='banner'></div>
     <div class='mainBlock'>
         <nav>
+            <div>
             <a href='home.php'>ACCUEIL</a>
-            <h2>ADMINISTRATION DU COMPTE</h2>
+            <h2>MON COMPTE</h2>
             <a href='home.php?manageAccount=modifyInformations'>GERER MON COMPTE</a>
             <a href='home.php?manageAccount=deconnexion'>DECONNEXION</a>
-            <h2>ADMINISTRATION EPISODES ET COMMENTAIRES</h2>
+            </div>
+            <div>
+            <h2>EPISODES ET COMMENTAIRES</h2>
             <a href='home.php?rubric=newEpisode'>CREER UN NOUVEL EPISODE</a>
             <a href='home.php?rubric=modifyEpisode'>MODIFIER UN EPISODE</a>
             <a href='home.php?rubric=manageComments'>GERER LES COMMENTAIRES</a>
+            </div>
         </nav>
         <section>
             <?= $sectionContent ?>

@@ -14,6 +14,7 @@ class ControllerRubricAdmin
         $this->episode = new Episode;
         $this->comment = new Comment;
     }
+    
     // Affiche la page d'accueil
     public function home()
     {
@@ -21,6 +22,7 @@ class ControllerRubricAdmin
        require "View/ViewHomeAdmin.php";
        require_once'View/templateAdmin.php';
     }
+    
     //Affiche la page creer épisode et gére le formulaire
     public function newEpisode()
     {
@@ -34,6 +36,7 @@ class ControllerRubricAdmin
         require_once 'View/ViewCreateEpisode.php';
         require_once 'View/templateAdmin.php';
     }
+    
     // Affiche la page modifier épisode
     public function displayModifyEpisode()
     {
@@ -71,6 +74,7 @@ class ControllerRubricAdmin
         header('Location: home.php?rubric=modifyEpisode');
         exit;
     }
+    
     // Affiche tous les épisodes
     public function getEpisodes()
     {
@@ -79,6 +83,7 @@ class ControllerRubricAdmin
         require_once 'View/ViewManageComments.php';
         require_once 'View/templateAdmin.php';
     }
+    
     // Affiche les commentaires d'un épisode
     public function getComments($idEpisode)
     {
@@ -87,7 +92,8 @@ class ControllerRubricAdmin
         require_once 'View/ViewManageComments.php';
         require_once 'View/templateAdmin.php';
         
-    }   
+    } 
+    
     // Supprime un commentaire
     public function deleteComment($idEpisode)
     {

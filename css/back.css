@@ -45,7 +45,6 @@ table th
     margin: auto;
     display: flex;
     justify-content: space-around;
-    width: 75%;
 }
 .mainBlock section
 {
@@ -81,7 +80,7 @@ label
 section
 {
     display: block;
-    width : 75%;
+    width : 70%;
 }
 section p
 {
@@ -99,16 +98,44 @@ section p
 {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: auto;
 }
 #linkEpisode a
 {
-    display: inline-block;
-    width: 20%;
-    height: 100px;
+    margin: 5px 0 5px 0;
+    width: 18%;
+    border-radius: 5px;
 }
 .contentCommment
 {
     display: inline-block;
     width: 200px;
+}
+
+/** Support petit écran **/
+@media all and (min-width: 992px) and (max-width: 1200px)
+{
+    .mainBlock
+    {
+        flex-direction: column;
+    }
+    nav
+    {
+        width: 100%;
+    }
+    nav div
+    {
+        
+        display: flex;
+    }
+    nav a
+    {
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    nav h2
+    {
+        display: none;
+    }
 }

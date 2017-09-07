@@ -5,13 +5,11 @@ ob_start();
     <h3>Sélectionnez l'épisode des commentaires à modifier</h3>
     <div id='linkEpisode'>
     <?php foreach($episodes as $episode): ?>
-        <a class='na' href='<?= 'home.php?rubric=manageComments&idEpisode=' . $episode["id"] ?>'><?= $episode['titre'] ?></a>
+        <a href='<?= 'home.php?rubric=manageComments&idEpisode=' . $episode["id"] ?>'><?= $episode['titre'] ?></a>
     <?php endforeach; ?>
      </div>
 
     <div class='blockComments'>
-    
-        <div class='comment'>
             <table>
                 <caption><h2>Commentaires de l'épisode</h2></caption>
                     <tr>
@@ -32,8 +30,8 @@ ob_start();
                     </tr>
                     <?php endforeach; ?>
             </table>
-        </div>
     </div>
+    
 <?php
 $sectionContent = ob_get_clean();
 ?>
