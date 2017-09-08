@@ -24,7 +24,7 @@
                 </nav>
         </header>
         <div id='banner'></div>
-        <section>
+        <section id='sectionHome'>
             <?= $sectionContent ?>
         </section>
         <footer>

@@ -5,20 +5,20 @@ ob_start();
 
 ?>
 <div>
-<article>
-    <h2><?= $episode['titre'] ?></h2>
-    <p><?= $episode['date_creation'] ?></p>
-    <div class='episodeContent'><?= $episode['contenu'] ?></div>   
+    <article>
+        <h2><?= $episode['titre'] ?></h2>
+        <p><?= $episode['date_creation'] ?></p>
+        <div class='episodeContent'><?= $episode['contenu'] ?></div>   
     </article>
-<div id='blockComment'>
-    <h3>COMMENTAIRES DE L'EPISODE</h3>
+    <div id='blockComment'>
+        <h3>COMMENTAIRES DE L'EPISODE</h3>
 
-    <?php foreach ($comments as $comment): ?>
-    <div class='comment'>
-        <p class='commentAuthor'> <?= $comment['author'] ?> <span> <?= $comment['date_comment'] ?></span></p> 
-        <p class='commentContent'> <?= $comment['content'] ?></p>
-    </div>
-<?php endforeach; ?>
+        <?php foreach ($comments as $comment): ?>
+            <div class='comment'>
+                <p class='commentAuthor'> <?= $comment['author'] ?> <span> <?= $comment['date_comment'] ?></span></p> 
+                <p class='commentContent'> <?= $comment['content'] ?></p>
+            </div>
+        <?php endforeach; ?>
 </div>
 <h3>AJOUTER UN COMMENTAIRE</h3>
 <div id='formComment'>
