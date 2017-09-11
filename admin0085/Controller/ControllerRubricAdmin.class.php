@@ -106,9 +106,10 @@ class ControllerRubricAdmin
     {
         if (isset($_POST['idComment']) AND isset($_POST['authorComment']) AND isset($_POST['contentComment']))
         {
-            $this->comment->modifyComment($idComment,$_POST['authorComment'],$_POST['contentComment']);    
+            $this->comment->modifyComment($idComment,strip_tags($_POST['authorComment']),nl2br(strip_tags($_POST['contentComment'])));    
         }
         $comment = $this->comment->getComment($idComment);
+        $comment['content'] = strip_tags($comment['content']);
         require_once 'View/ViewmodifyComment.php';
         require_once 'View/templateAdmin.php';
     }
