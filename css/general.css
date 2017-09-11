@@ -54,9 +54,7 @@ nav a
 }
 section
 {
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+    display: flex; 
     padding: 0 5px 0 5px;
 }
 section a 
@@ -75,17 +73,31 @@ section p
 {
     font-size: 1.2em;
 }
+input
+{
+    margin: auto;
+    height: 50px;
+    width: 70%;
+    text-align: center;
+}
+input,textarea
+{
+    margin: center;
+    font-size: 1.2em;
+    border: 1px #2572C6 solid;
+}
 .submit
 {
+    width: auto;
     font-size: 1.2em;
-    background-color: white;
+    background-color:#2572C6;
     cursor: pointer;
     display: block;
+    margin-top: 5px;
     margin: auto;
     text-align: center;
     text-decoration: none;
-    color: #2572C6;
-    border: 2px #2572C6 solid;   
+    color: white;  
 }
 article
 {
