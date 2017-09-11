@@ -102,8 +102,14 @@ class ControllerRubricAdmin
     }
     
     // Modération du commentaire
-    public function modifyComment($idComment,$authorComment,$contentComment)
+    public function modifyComment($idComment)
     {
-        $this->comment->modifyComment($idComment,$authorComment,$contentComment);
+        if (isset($_POST['idComment']) AND isset($_POST['authorComment']) AND isset($_POST['contentComment']))
+        {
+            $this->comment->modifyComment($idComment,$_POST['authorComment'],$_POST['contentComment']);    
+        }
+        $comment = $this->comment->getComment($idComment);
+        require_once 'View/ViewmodifyComment.php';
+        require_once 'View/templateAdmin.php';
     }
 }

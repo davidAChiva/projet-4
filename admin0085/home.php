@@ -49,7 +49,7 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
                     // Modification du commentaire
                     if ($_GET['typeManage'] === 'modify')
                     {
-                        $ctrlRubric->modifyComment($_POST['idComment'],$_POST['authorComment'],$_POST['contentComment']);
+                        $ctrlRubric->modifyComment($_GET['idComment']);
                     }
                     else if ($_GET['typeManage'] === 'delete')
                     // Suppression du commentaire

@@ -18,6 +18,20 @@ class Comment extends Model
         $comments = $this->executeRequest($sql, array($idEpisode));
         return $comments;
     }
+    // Récupére un commentaire
+    public function getComment($idComment)
+    {
+        $sql = 'SELECT id,author,content FROM comments WHERE id=?';
+        $comment = $this->executeRequest($sql, array($idComment));
+         if ($comment ->rowCount() === 1)
+        {
+            return $comment->fetch();
+        }
+        else
+        {
+            throw new Exception("Aucun commentaire ne correspond à l'identifiant" . $idComment);
+        }
+    }
     // Récupére les 5 derniers commentaires
     public function getLastComments()
     {
@@ -28,7 +42,7 @@ class Comment extends Model
     // Ajoute un commentaire à la base
     public function setComment($author, $content, $idEpisode)
     {
-        $sql='INSERT INTO comments(author, content, date_comment, episode_id) VALUES(?, ? , CURDATE(), ?)';
+        $sql = 'INSERT INTO comments(author, content, date_comment, episode_id) VALUES(?, ? , CURDATE(), ?)';
         $setComment = $this->executeRequest($sql, array($author, $content, $idEpisode));
         return $setComment;
     }
