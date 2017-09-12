@@ -9,27 +9,23 @@
     </head>
     <body>
         <header>
+            <h1>BILLET SIMPLE POUR L'ALASKA | <span>Jean Forteroche</span></h1>
+            <nav>
+                <a href='index.php'>ACCUEIL</a>
+                <a href='contact.php'>CONTACT</a>
+            </nav>
             <div>
-                <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-                <h1>LIVRE DE JEAN FORTEROCHE</h1>
-            </div>
-            <div>
-                <p>SUIVEZ MOI</p>
                 <a href=''><i class="fa fa-facebook fa-3x iconeFontAWeSome" aria-hidden="true"></i></a>
                 <a href=''><i class="fa fa-twitter fa-3x iconeFontAWeSome" aria-hidden="true"></i></a>
             </div>
-                <nav>
-                    <a href='index.php'>ACCUEIL</a>
-                    <a href='contact.php'>CONTACT</a>
-                </nav>
         </header>
         <div id='banner'></div>
         <section id='sectionHome'>
             <?= $sectionContent ?>
         </section>
         <footer>
-            <h4>COPYRIGHT JEAN FORTEROCHE</h4>
             <a href='index.php?information=mentions'>Mentions légales</a>
+            <h4>COPYRIGHT JEAN FORTEROCHE</h4>
         </footer>
     </body>
 </html>
