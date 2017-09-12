@@ -47,9 +47,17 @@ class ControllerFrontOffice
         }
         require_once 'View/ViewEpisode.class.php';
     }
+    
     // Affiche les mentions légales
     public function mentions()
     {
         require_once 'View/ViewMentions.class.php';
+    }
+    
+    // Affiche la page d'erreur
+    public function error($errorMsg)
+    {
+        $errorMessage = $errorMsg;
+        require_once 'View/ViewError404.php';
     }
 }
