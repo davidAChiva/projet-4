@@ -9,7 +9,7 @@ ob_start();
     <input type='text' id='authorComment' name='authorComment' value='<?= $comment['author'] ?>'></input>
 <h3><label for='contentComment'>Contenu du commentaire</label></h3>
     <textarea id='contentComment' name='contentComment' rows='10' cols='60'><?= $comment['content'] ?></textarea>
-    <input class='submit'type='submit' value='Modifier' </input>
+<input class='submit'type='submit' value='Modifier' </input>
 </form>
 
 <?php

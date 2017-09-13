@@ -118,7 +118,10 @@ section p
     display: inline-block;
     width: 200px;
 }
-
+.rowBoardComments
+{
+    border-bottom: 2px blue solid;
+}
 /** Support petit écran **/
 @media all and (min-width: 992px) and (max-width: 1200px)
 {

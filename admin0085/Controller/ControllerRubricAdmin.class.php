@@ -74,20 +74,19 @@ class ControllerRubricAdmin
         exit;
     }
     
-    // Affiche tous les épisodes
-    public function getEpisodes()
+    // Gére l'affichage des commentaires
+    public function manageComments()
     {
+        if (isset($_POST['idEpisodeGetComments']))
+        {
+            $idEpisode = $_POST['idEpisodeGetComments'];
+            $comments = $this->comment->getComments($idEpisode);
+        }
+        else
+        {
+            $comments = $this->comment->getAllcomments();    
+        }
         $episodes = $this->episode->getEpisodesAsc();
-        $comments = $this->comment->getComments(null); 
-        require_once 'View/ViewManageComments.php';
-        require_once 'View/templateAdmin.php';
-    }
-    
-    // Affiche les commentaires d'un épisode
-    public function getComments($idEpisode)
-    {
-        $episodes = $this->episode->getEpisodesAsc();
-        $comments = $this->comment->getComments($idEpisode);
         require_once 'View/ViewManageComments.php';
         require_once 'View/templateAdmin.php';
         

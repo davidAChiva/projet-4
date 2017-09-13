@@ -11,6 +11,13 @@ require_once '../Framework/Model.class.php';
 
 class Comment extends Model
 {
+    // Liste de tous les commentaires
+    public function getAllComments()
+    {
+        $sql = 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment,episode_id FROM comments';
+        $comments = $this->executeRequest($sql);
+        return $comments;
+    }
     // Liste des commentaires de l'épisode concerné
     public function getComments($idEpisode)
     {

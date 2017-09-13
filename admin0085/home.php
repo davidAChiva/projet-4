@@ -36,30 +36,22 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
         }
          
         else if ($_GET['rubric'] === 'manageComments')
-        {
-            if (!isset($_GET['idEpisode']))
+        {   
+            if (isset($_GET['idEpisode']) AND isset($_GET['typeManage']))
             {
-                $ctrlRubric->getEpisodes();
-            }
-            
-            else
-            {
-                if (isset($_GET['typeManage']))
+                // Modification du commentaire
+                if ($_GET['typeManage'] === 'modify')
                 {
-                    // Modification du commentaire
-                    if ($_GET['typeManage'] === 'modify')
-                    {
-                        $ctrlRubric->modifyComment($_GET['idComment']);
-                    }
-                    else if ($_GET['typeManage'] === 'delete')
-                    // Suppression du commentaire
-                    {
-                        $ctrlRubric->deleteComment($_GET['idComment']);   
-                    }
+                    $ctrlRubric->modifyComment($_GET['idComment']);
                 }
-                // Affiche les commentaires d'un épisode
-                $ctrlRubric->getComments($_GET['idEpisode']);
+                else if ($_GET['typeManage'] === 'delete')
+                // Suppression du commentaire
+                {
+                    $ctrlRubric->deleteComment($_GET['idComment']);   
+                }
             }
+            // Affiche les commentaires d'un épisode
+            $ctrlRubric->manageComments();
         }
     }
     
