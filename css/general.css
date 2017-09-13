@@ -49,6 +49,10 @@ nav a
     background-color: #2572C6;
     color: white;
 }
+nav a:hover
+{
+    background-color: #135193;
+}
 #banner
 {
     margin: auto;
@@ -74,6 +78,10 @@ section a
     text-decoration: none;
     color: white;
     border: 2px #2572C6 solid;
+}
+section a:hover
+{
+    background-color: #135193;
 }
 section p
 {
@@ -106,6 +114,10 @@ input,textarea
     text-align: center;
     text-decoration: none;
     color: white;  
+}
+.submit:hover
+{
+    background-color: #135193;
 }
 article
 {

@@ -24,7 +24,7 @@ ob_start();
     <label for='titleEditEpisode'>TITRE DE L'EPISODE</label>
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?php echo $titleEpisode; ?>' required /> <br />
     <label for='contentEditEpisode'>CONTENU DE L'EPISODE</label>
-    <textarea id='contentEditEpisode' name='contentEditEpisode' rows='30'required> <?= $contentEpisode ?> </textarea>
+    <textarea id='contentEditEpisode' name='contentEditEpisode' rows='30' cols='60'required> <?= $contentEpisode ?> </textarea> <br />
     <input class='submit' type='submit' value="Modifiez l'épisode" />
 </form>
 <?php
