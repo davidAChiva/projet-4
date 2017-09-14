@@ -17,7 +17,8 @@ class ControllerFrontOffice
     // Affiche les éléments de la page d'accueil
     public function home()
     {
-       $episodes = $this->episode->getEpisodesDesc();
+       $episodes = $this->episode->getEpisodesAsc();
+       $lastEpisodes = $this->episode->getLastEpisodes();
        $lastComments = $this->comment->getLastComments();
        require "View/ViewHome.class.php";
     }

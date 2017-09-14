@@ -42,6 +42,13 @@ class Episode extends Model
             throw new Exception("Aucun billet ne correspond à l'identifiant" . $idEpisode);
         }
     }
+    // Récupére les 5 derniers épisodes
+    public function getLastEpisodes()
+    {
+        $sql = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,5';
+        $lastEpisodes = $this->executeRequest($sql);
+        return $lastEpisodes;
+    }
     // Récupére le dernier épisode
     public function getLastEpisode()
     {

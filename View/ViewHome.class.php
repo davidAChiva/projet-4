@@ -5,12 +5,12 @@ $title = "Accueil | Billet simple pour l'Alaska";
 ob_start();
 ?>
 <div id='sectionLeftHome'>
-<h2>LES EPISODES</h2>   
-<?php foreach ($episodes as $episode): ?>
+<h2>LES DERNIERS EPISODES</h2>   
+<?php foreach ($lastEpisodes as $lastEpisode): ?>
     <div class='episode'>
-        <h3 class='titleEpisode'><?= $episode['titre'] ?></h3>
-        <p class='contentEpisode'> <?= substr($episode['contenu'],0,350) . '...' ?></p>
-        <a href='<?= 'index.php?episode=' . $episode['id'] ?>'>Voir l'épisode en entier</a>
+        <h3 class='titleEpisode'><?= $lastEpisode['titre'] ?></h3>
+        <p class='contentEpisode'> <?= substr($lastEpisode['contenu'],0,350) . '...' ?></p>
+        <a href='<?= 'index.php?episode=' . $lastEpisode['id'] ?>'>Voir l'épisode en entier</a>
     </div>
 <?php endforeach; ?>
 </div>
@@ -24,6 +24,12 @@ ob_start();
             N'hésitez pas à laisser un commentaire.
         </p>
     </div>
+    <div id='blockAllEpisodes'>
+        <h2>LISTE DES EPISODES</h2>
+        <?php foreach ($episodes as $episode): ?>
+        <a href='<?= 'index.php?episode=' . $episode['id'] ?>'><?= $episode['titre'] ?> </a>
+        <?php endforeach; ?>
+    </div>
     <div id='blockLastComments'>
     <h2>LES DERNIERS COMMENTAIRES</h2>
        <?php foreach ($lastComments as $lastComment): ?> 
@@ -32,7 +38,7 @@ ob_start();
             <p class='lastCommentAuthor'>écrit par <?= $lastComment['author'] ?></p>
             <p class='lastCommentDate'>Le <?= $lastComment['date_comment'] ?></p>
         </div>
-        <?php endforeach ?>
+        <?php endforeach; ?>
     </div>
 </div>
 
