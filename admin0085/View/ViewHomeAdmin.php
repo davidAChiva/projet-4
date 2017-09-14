@@ -6,7 +6,7 @@ ob_start();
 <h3>Dernier épisode</h3>
 <article>
     <h2><?= $lastEpisode['titre'] ?></h2>
-    <p><?= $lastEpisode['date_creation'] ?></p>
+    <p id='dateEpisodeHome'><?= $lastEpisode['date_creation'] ?></p>
     <div class='episodeContent'><?= $lastEpisode['contenu'] ?></div>   
 </article>
 <?php

@@ -10,10 +10,10 @@ ob_start();
     </tr>
 <?php foreach($episodes as $episode): ?>
 
-    <tr class='blockEpisode'>
+    <tr>
         <td class='titleEpisode'><?= $episode['titre'] ?></td>
-        <td><a href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=modify'>Modifier</a></td>
-        <td><a href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=delete'>Supprimer</a></td>
+        <td><a  class='action' href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=modify'>Modifier</a></td>
+        <td><a class='action' href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=delete'>Supprimer</a></td>
     </tr>
 
 <?php endforeach; ?>

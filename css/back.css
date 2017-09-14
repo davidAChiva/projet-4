@@ -15,6 +15,29 @@ header h1
 {
     font-size: 2em;
 }
+nav
+{
+    padding-left: 5px;
+    width: 25%;
+}
+nav h2
+{
+    width: 300px;
+    box-shadow: none;
+    border: none;
+    color: #2572C6;
+    background-color: white;
+}
+nav a
+{
+    display: block;
+    font-size: 20px;
+    margin: 5px 0 5px 0;
+    text-align: center;
+    line-height: 125px;
+    width: 300px;
+    height: 125px;
+}
 #helloUser
 {
     font-size: 1.4em;
@@ -46,6 +69,11 @@ table th
     justify-content: center;
     align-items: flex-start;
 }
+#dateEpisodeHome
+{
+    text-align: center;
+    color: white;
+}
 .episodeContent
 {
    padding: 5px;
@@ -53,25 +81,6 @@ table th
    color: black;
    background-color: white;
    text-align: left;
-}
-nav
-{
-    padding-left: 5px;
-    width: 25%;
-}
-nav h2
-{
-    width: 300px;
-}
-nav a
-{
-    display: block;
-    font-size: 20px;
-    margin: 5px 0 5px 0;
-    text-align: center;
-    line-height: 125px;
-    width: 300px;
-    height: 125px;
 }
 label
 {
@@ -113,6 +122,11 @@ section p
     width: 18%;
     border-radius: 5px;
 }
+#authorComment
+{
+    margin: auto;
+    width: 100%;
+}
 .contentCommment
 {
     display: inline-block;
@@ -121,6 +135,68 @@ section p
 .rowBoardComments
 {
     border-bottom: 2px blue solid;
+}
+
+/** Support téléphone mobile **/
+@media all and (max-width: 767px)
+{
+    #banner
+    {
+        display: none;
+    }
+     .mainBlock
+    {
+        flex-direction: column;
+    }
+    nav
+    {
+        width: 100%;
+    }
+    nav div
+    {
+        display: flex;
+    }
+    nav a
+    {
+        margin : 5px 0 0 0;
+        line-height: normal;
+        font-size: 1em;
+        height: 50px;
+        width: 200px;
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    nav h2
+    {
+        display: none;
+    }
+}
+
+/** Support tablette **/
+@media all and (min-width: 768px) and (max-width: 991px)
+{
+      .mainBlock
+    {
+        flex-direction: column;
+    }
+    nav
+    {
+        width: 100%;
+    }
+    nav div
+    {
+        
+        display: flex;
+    }
+    nav a
+    {
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    nav h2
+    {
+        display: none;
+    }
 }
 /** Support petit écran **/
 @media all and (min-width: 992px) and (max-width: 1200px)
