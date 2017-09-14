@@ -4,6 +4,11 @@
     text-align: center;
     color : white;
 }
+header
+{
+    width: 100%;
+    position: fixed;
+}
 nav a
 {
     font-weight: bold;
