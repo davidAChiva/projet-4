@@ -54,11 +54,23 @@ section
     color: black;
      padding: 5px;
 }
+#blockAllEpisodes
+{
+
+}
 #blockAllEpisodes a
 {
     display: inline-block;
     width: 100%;
+    color: #2572C6;
+    background-color: white;
     text-align: left;
+    border: none;
+}
+#blockAllEpisodes a:hover
+{
+    background-color: #2572C6;
+    color: white;
 }
 #blockLastComments
 {

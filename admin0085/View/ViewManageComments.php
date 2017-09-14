@@ -17,7 +17,7 @@ ob_start();
      </div>
 
     <div class='blockComments'>
-            <table>
+            <table id='BoardModifyComments'>
                 <caption><h3>Les commentaires</h3></caption>
                     <tr>
                         <th>Auteur</th>
@@ -28,7 +28,7 @@ ob_start();
 
                     <tr>
                             <td><?= $comment['author'] ?></td>
-                            <td class='rowBoardComments'><?= substr($comment['content'],0,100) ?></td>
+                            <td><?= substr($comment['content'],0,100) ?></td>
                             <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
                         <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
                     </tr>

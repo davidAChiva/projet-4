@@ -7,7 +7,7 @@ ob_start();
     <label for='titleNewEpisode'>TITRE DE L'EPISODE</label>
     <input type='text' id='titleNewEpisode' name='titleNewEpisode' required /> <br />
     <label for='contentNewEpisode'>CONTENU DE L'EPISODE</label>
-    <textarea id='contentNewEpisode' name='contentNewEpisode' rows='30'></textarea> <br />
+    <textarea id='contentNewEpisode' name='contentNewEpisode' rows='30'cols='120'></textarea> <br />
     <input class='submit' type='submit' value='Creer le nouveau épisode' />
 </form>
 <?php

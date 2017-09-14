@@ -98,7 +98,7 @@ input
 }
 input,textarea
 {
-    margin: center;
+    margin: auto;
     font-size: 1.2em;
     border: 1px #2572C6 solid;
 }
