@@ -20,6 +20,7 @@ ob_start();
             <table id='BoardModifyComments'>
                 <caption><h3>Les commentaires</h3></caption>
                     <tr>
+                        <th>Episode</th>
                         <th>Auteur</th>
                         <th>Contenu</th>
                         <th colspan='2'>Action</th>
@@ -27,6 +28,7 @@ ob_start();
                     <?php foreach($comments as $comment): ?>
 
                     <tr>
+                            <td><?= $comment['titre'] ?></td>
                             <td><?= $comment['author'] ?></td>
                             <td><?= substr($comment['content'],0,100) ?></td>
                             <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>

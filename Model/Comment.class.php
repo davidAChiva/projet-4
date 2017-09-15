@@ -14,14 +14,22 @@ class Comment extends Model
     // Liste de tous les commentaires
     public function getAllComments()
     {
-        $sql = 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment,episode_id FROM comments';
+        $sql = 'SELECT comments.id,comments.author,comments.content,DATE_FORMAT(comments.date_comment, "%d/%m/%Y") AS date_comment,comments.episode_id,episodes.titre
+        FROM comments
+        INNER JOIN episodes
+        ON comments.episode_id = episodes.id
+        ORDER BY episodes.id ASC ';
         $comments = $this->executeRequest($sql);
         return $comments;
     }
     // Liste des commentaires de l'épisode concerné
     public function getComments($idEpisode)
     {
-        $sql = 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment,episode_id FROM comments WHERE episode_id=?';
+        $sql = 'SELECT comments.id,comments.author,comments.content,DATE_FORMAT(comments.date_comment, "%d/%m/%Y") AS date_comment,comments.episode_id,episodes.titre
+        FROM comments
+        INNER JOIN episodes
+        ON comments.episode_id = episodes.id
+        WHERE comments.episode_id = ?';
         $comments = $this->executeRequest($sql, array($idEpisode));
         return $comments;
     }
