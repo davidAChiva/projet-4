@@ -27,7 +27,11 @@ class ControllerFrontOffice
     {
         $episode = $this->episode->getEpisode($idEpisode);
         $comments = $this->comment->getComments($idEpisode);
+        // valeur par défault 
         $errorMessage = null;
+        $valueAuthor = null;
+        $valueComment = null;
+        
         if (isset($_POST['author']) AND isset($_POST['comment']))
         {
             if (preg_match('#[a-zA-Z0-9]{3,15}#',$_POST['author']) AND preg_match('#[a-zA-Z0-9 ]{10,200}#',$_POST['comment']))
@@ -38,10 +42,14 @@ class ControllerFrontOffice
             }
             else if (!preg_match('#[a-zA-Z0-9]{3,15}#',$_POST['author']))
             {
+                $valueAuthor = $_POST['author'];
+                $valueComment = $_POST['comment'];
                 $errorMessage = 'Le pseudo doit contenir entre 3 et 15 caractères.';
             }
             else if (!preg_match('#[a-zA-Z0-9 ]{10,200}#',$_POST['comment']))
             {
+                $valueAuthor = $_POST['author'];
+                $valueComment = $_POST['comment'];
                 $errorMessage = 'Le commentaire doit contenir au moins 10 caractères.';    
             }
             

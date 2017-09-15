@@ -24,9 +24,9 @@ ob_start();
 <div id='formComment'>
     <form  method='post' action='index.php?episode= <?= $_GET['episode'] ?>'>
         <label for='author'><h4>Votre pseudo</h4></label> 
-        <input type='text' id='formAuthorComment' name='author' required /> 
+        <input type='text' id='formAuthorComment' name='author' value='<?= $valueAuthor ?>' required /> 
         <label for='comment'><h4>Votre commentaire</h4></label> 
-        <textarea id='formAuthorComment' name='comment' rows='10' cols='75' required>
+        <textarea id='formAuthorComment' name='comment' rows='10' cols='75' required><?= $valueComment ?>
         </textarea> <br />
         <input class='submit'type='submit' value='Commenter' />
     </form>
