@@ -66,6 +66,11 @@ table td
     font-size: 1.2em;
     border: 1px #2572C6 solid;
 }
+table td a
+{
+    width: 80px;
+    font-size: 1em;
+}
 .titleEpisode
 {
     font-size: 1.4em;
@@ -117,38 +122,6 @@ section p
 {
     color: black;
 }
-#deleteComment
-{
-    text-decoration: none;
-    padding: 5px;
-    border : 2px black solid;
-    color: black;
-}
-/* Lien pour accéder aux commentaires d'un épisode */
-#linkEpisode
-{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: auto;
-}
-#linkEpisode a
-{
-    margin: 5px 0 5px 0;
-    width: 18%;
-    border-radius: 5px;
-}
-#authorComment
-{
-    margin: auto;
-    width: 100%;
-}
-.contentCommment
-{
-    display: inline-block;
-    width: 200px;
-}
-
 /** Support téléphone mobile **/
 @media all and (max-width: 767px)
 {

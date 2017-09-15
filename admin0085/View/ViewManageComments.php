@@ -17,7 +17,7 @@ ob_start();
      </div>
 
     <div class='blockComments'>
-            <table id='BoardModifyComments'>
+            <table id='boardModifyComments'>
                 <caption><h3>Les commentaires</h3></caption>
                     <tr>
                         <th>Episode</th>
