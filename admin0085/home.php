@@ -26,13 +26,17 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
                     // Affiche et modifie l'épisode
                     $ctrlRubric->modifyEpisode();    
                 }
-                    else if ($_GET['typeManage'] === 'delete')
+                else if ($_GET['typeManage'] === 'delete')
                 {
                     // Supprime l'épisode
                     $ctrlRubric->deleteEpisode($_GET['id']);
                 }
             }
+            // Affiche tous les épisodes
+            else
+            {
             $ctrlRubric->displayModifyEpisode();
+            }
         }
          
         else if ($_GET['rubric'] === 'manageComments')
@@ -50,8 +54,11 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
                     $ctrlRubric->deleteComment($_GET['idComment']);   
                 }
             }
+            else
+            {
             // Affiche les commentaires d'un épisode
             $ctrlRubric->manageComments();
+            }
         }
     }
     
