@@ -37,14 +37,11 @@ class ControllerRubricAdmin
         require_once 'View/templateAdmin.php';
     }
     
-    // Affiche la page modifier épisode
-    public function displayModifyEpisode()
+    // Affiche la page pour gérer les épisodes
+    public function manageEpisodes()
     {
         $episodes = $this->episode->getEpisodesDesc();
-        $idEpisode = null;
-        $titleEpisode = null;
-        $contentEpisode = null;
-        require_once 'View/ViewModifyEpisode.php';
+        require_once 'View/ViewManageEpisodes.php';
         require_once 'View/templateAdmin.php';
     }
     
@@ -57,11 +54,7 @@ class ControllerRubricAdmin
             $this->episode->modifyEpisode($_POST['idEditEpisode'],strip_tags($_POST['titleEditEpisode']),$_POST['contentEditEpisode']);
         }
         
-        $episodes = $this->episode->getEpisodesDesc();
         $episode = $this->episode->getEpisode($_GET['id']);
-        $idEpisode = $episode['id'];
-        $titleEpisode = $episode['titre'];
-        $contentEpisode = $episode['contenu'];
 
         require_once 'View/ViewModifyEpisode.php';
         require_once 'View/templateAdmin.php';
@@ -77,10 +70,10 @@ class ControllerRubricAdmin
     // Gére l'affichage des commentaires
     public function manageComments()
     {
-        if (isset($_POST['idEpisodeGetComments']))
+        if (isset($_POST['idEpisodeGetComments']) AND $_POST['idEpisodeGetComments'] !== 'all')
         {
             $idEpisode = $_POST['idEpisodeGetComments'];
-            $comments = $this->comment->getComments($idEpisode);
+            $comments = $this->comment->getComments($idEpisode);          
         }
         else
         {

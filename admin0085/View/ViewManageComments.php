@@ -7,10 +7,11 @@ ob_start();
         <form method='post' action='home.php?rubric=manageComments'>
             <label for='idEpisodeGetComments'>TRIER PAR EPISODE</label>
             <select name='idEpisodeGetComments' id='idEpisodeGetComments'>
+                <option value='all'>Tous les épisodes</option>
                 <?php foreach($episodes as $episode): ?>
-                <option value='<?= $episode['id'] ?>'><?= $episode['titre'] ?></option>
+                <option value='<?= $episode['id'] ?>' > <?= $episode['titre'] ?></option>
                 <?php endforeach; ?>
-                <input class='submit'type='submit' value='Sélectionnez cet épisode'</input>
+                <input class='submit'type='submit' value='Sélectionnez'</input>
             </select>
 
         </form>

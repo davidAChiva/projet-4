@@ -35,7 +35,7 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             // Affiche tous les épisodes
             else
             {
-            $ctrlRubric->displayModifyEpisode();
+            $ctrlRubric->manageEpisodes();
             }
         }
          
