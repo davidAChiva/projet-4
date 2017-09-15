@@ -8,7 +8,10 @@ ob_start();
     <input type='text' id='titleNewEpisode' name='titleNewEpisode' required /> <br />
     <label for='contentNewEpisode'>CONTENU DE L'EPISODE</label>
     <textarea id='contentNewEpisode' name='contentNewEpisode' rows='30'cols='120'></textarea> <br />
-    <input class='submit' type='submit' value='Creer le nouveau épisode' />
+    <div class='blockButtonForm'>
+        <input class='submit' type='submit' value='Créer' />
+        <input class='submit' type='reset' value='Annuler' />
+    </div>
 </form>
 <?php
 $sectionContent = ob_get_clean();

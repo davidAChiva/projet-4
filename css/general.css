@@ -102,6 +102,12 @@ input,textarea
     font-size: 1.2em;
     border: 1px #2572C6 solid;
 }
+.blockButtonForm
+{
+    width: 200px;
+    margin: auto;
+    display: flex;
+}
 .submit
 {
     width: auto;

@@ -28,7 +28,10 @@ ob_start();
         <label for='comment'><h4>Votre commentaire</h4></label> 
         <textarea id='formAuthorComment' name='comment' rows='10' cols='75' required><?= $valueComment ?>
         </textarea> <br />
-        <input class='submit'type='submit' value='Commenter' />
+        <div class='blockButtonForm'>
+            <input class='submit'type='submit' value='Commenter' />
+            <input class='submit'type='reset' value ='Annuler' />
+        </div>
     </form>
 </div>
     <p class='errorMessage'><?= $errorMessage ?></p>

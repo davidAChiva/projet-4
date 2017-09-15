@@ -4,12 +4,15 @@ ob_start();
 ?>
 <h2>MODERER LE COMMENTAIRE</h2>
 <form method='post' action='home.php?rubric=manageComments&idEpisode=<?= $comment['id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>
-    <input type='hidden' id='idComment' name='idComment' value='<?= $comment['id'] ?>'></input>
-<h3><label for='authorComment'>Auteur du commentaire</label></h3>
-    <input type='text' id='authorComment' name='authorComment' value='<?= $comment['author'] ?>'></input>
-<h3><label for='contentComment'>Contenu du commentaire</label></h3>
+    <input type='hidden' id='idComment' name='idComment' value='<?= $comment['id'] ?>'/>
+    <h3><label for='authorComment'>Auteur du commentaire</label></h3>
+    <input type='text' id='authorComment' name='authorComment' value='<?= $comment['author'] ?>'/>
+    <h3><label for='contentComment'>Contenu du commentaire</label></h3>
     <textarea id='contentComment' name='contentComment' rows='10' cols='60'><?= $comment['content'] ?></textarea>
-<input class='submit'type='submit' value='Modifier' </input>
+    <div class='blockButtonForm'>
+        <input class='submit'type='submit' value='Modifier' />
+        <input class='submit' type='reset' value='Annuler' />
+    </div>
 </form>
 
 <?php

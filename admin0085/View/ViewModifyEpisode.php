@@ -8,7 +8,10 @@ ob_start();
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?= $episode['titre'] ?>' required /> <br />
     <h3><label for='contentEditEpisode'>CONTENU DE L'EPISODE</label></h3>
     <textarea id='contentEditEpisode' name='contentEditEpisode' rows='30' cols='60'required> <?= $episode['contenu'] ?> </textarea> <br />
-    <input class='submit' type='submit' value="Modifiez l'épisode" />
+    <div class='blockButtonForm'>
+    <input class='submit' type='submit' value='Modifier' />
+    <input class='submit' type='reset' value='Annuler' />
+    </div>
 </form>
 
 <?php $sectionContent = ob_get_clean(); ?>
