@@ -4,7 +4,7 @@ ob_start();
 ?>
     <h2>Modération des commentaires</h2>
     <div id='linkEpisode'>
-        <form method='post' action='home.php?rubric=manageComments'>
+        <form method='post' action='home.php?action=manageComments'>
             <label for='idEpisodeGetComments'>TRIER PAR EPISODE</label>
             <select name='idEpisodeGetComments' id='idEpisodeGetComments'>
                 <option value='all'>Tous les épisodes</option>
@@ -32,8 +32,8 @@ ob_start();
                             <td><?= $comment['title'] ?></td>
                             <td><?= $comment['author'] ?></td>
                             <td><?= substr($comment['content'],0,100) ?></td>
-                            <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
-                        <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
+                            <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
+                        <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
                     </tr>
                     <?php endforeach; ?>
             </table>

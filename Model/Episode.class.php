@@ -39,7 +39,7 @@ class Episode extends Model
         }
         else
         {
-            throw new Exception("Aucun billet ne correspond à l'identifiant " . $idEpisode);
+            throw new Exception("Aucun épisode ne correspond à l'identifiant " . $idEpisode);
         }
     }
     // Récupére les 5 derniers épisodes

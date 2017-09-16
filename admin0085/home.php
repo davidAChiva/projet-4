@@ -6,18 +6,19 @@ require_once 'Controller/ControllerAccountAdmin.class.php';
 
 if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
 {   
-    // Affiche la page en fonction de la variable option    
-    if (isset($_GET['rubric']))
+    // Affiche la page en fonction de l'action   
+    if (isset($_GET['action']))
     {
         $ctrlRubric = new ControllerRubricAdmin();
+        $ctrlAccount = new ControllerAccountAdmin();
         
-        if ($_GET['rubric'] === 'newEpisode')
+        if ($_GET['action'] === 'newEpisode')
         {
             // Affiche la page pour creer un nouvel épisode
             $ctrlRubric->newEpisode();
         }
         
-        else if ($_GET['rubric'] === 'modifyEpisode')
+        else if ($_GET['action'] === 'manageEpisode')
         {  
             if (isset($_GET['id']) AND isset($_GET['typeManage']))
             {
@@ -39,7 +40,7 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             }
         }
          
-        else if ($_GET['rubric'] === 'manageComments')
+        else if ($_GET['action'] === 'manageComments')
         {   
             if (isset($_GET['idEpisode']) AND isset($_GET['typeManage']))
             {
@@ -56,28 +57,28 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
             }
             else
             {
-            // Affiche les commentaires d'un épisode
+            // Affiche les commentaires 
             $ctrlRubric->manageComments();
             }
         }
-    }
-    
-    else if (isset($_GET['manageAccount']))
-    {
-        // Création de l'objet
-        $ctrlAccount = new ControllerAccountAdmin();
         
-        if ($_GET['manageAccount'] === 'deconnexion')
-        {
-            $ctrlAccount->deconnexion();    
+        else if ($_GET['action'] === 'manageAccount')
+        {   
+            if (isset($_GET['typeManage']))
+            {
+                if ($_GET['typeManage'] === 'deconnexion')
+                {
+                    $ctrlAccount->deconnexion();    
+                }
+
+                else if ($_GET['typeManage'] === 'modifyInformations')
+                {
+                    $ctrlAccount->modifyAccount();
+                }
+            }
         }
-        
-        else if ($_GET['manageAccount'] === 'modifyInformations')
-        {
-            $ctrlAccount->manageAccount();
-        }          
+
     }
-    
     else
     {
         $ctrlRubric = new ControllerRubricAdmin();

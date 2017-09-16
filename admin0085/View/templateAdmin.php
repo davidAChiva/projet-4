@@ -18,14 +18,14 @@
             <div>
             <a href='home.php'>ACCUEIL</a>
             <h2>MON COMPTE</h2>
-            <a href='home.php?manageAccount=modifyInformations'>GERER MON COMPTE</a>
-            <a href='home.php?manageAccount=deconnexion'>DECONNEXION</a>
+            <a href='home.php?action=manageAccount&typeManage=modifyInformations'>GERER MON COMPTE</a>
+            <a href='home.php?action=manageAccount&typeManage=deconnexion'>DECONNEXION</a>
             </div>
             <div>
             <h2>EPISODES ET COMMENTAIRES</h2>
-            <a href='home.php?rubric=newEpisode'>CREER UN NOUVEL EPISODE</a>
-            <a href='home.php?rubric=modifyEpisode'>MODIFIER UN EPISODE</a>
-            <a href='home.php?rubric=manageComments'>GERER LES COMMENTAIRES</a>
+            <a href='home.php?action=newEpisode'>CREER UN NOUVEL EPISODE</a>
+            <a href='home.php?action=manageEpisode'>MODIFIER UN EPISODE</a>
+            <a href='home.php?action=manageComments'>GERER LES COMMENTAIRES</a>
             </div>
         </nav>
         <section>

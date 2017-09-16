@@ -34,7 +34,7 @@ class ControllerAccountAdmin
         require_once 'View/ViewConnexion.php';
     }
     //Gére le changement de pseudo ou mot de passe
-    public function manageAccount()
+    public function modifyAccount()
     {
         if (isset($_POST['newPseudo']))
         {

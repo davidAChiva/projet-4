@@ -64,7 +64,7 @@ class ControllerRubricAdmin
     {
         $this->episode->deleteEpisode($id);
         $this->comment->deleteCommentsEpisode($id);
-        header('Location: home.php?rubric=modifyEpisode');
+        header('Location: home.php?action=manageEpisode');
         exit;
     }
     
@@ -90,7 +90,7 @@ class ControllerRubricAdmin
     public function deleteComment($idEpisode)
     {
         $this->comment->deleteComment($idEpisode);
-        header('Location:home.php?rubric=manageComments&idEpisode=' . $_GET['idEpisode']);
+        header('Location:home.php?action=manageComments&idEpisode=' . $_GET['idEpisode']);
         exit;
     }
     
