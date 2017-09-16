@@ -4,35 +4,43 @@ require 'Controller/ControllerFront.class.php';
 $ctrlFrontOffice = new ControllerFrontOffice;
 try
 {
-if (isset($_GET['episode']))
-{
-    $idEpisode = intval($_GET['episode']);
-    
-    if ($idEpisode != 0)
+    if (isset($_GET['action']))
     {
-        $ctrlFrontOffice->episode($idEpisode);
-    }
-    else 
-    {
-        throw new Exception('Aucun épisode ne correspond à l\'identifiant ' . $idEpisode);
-    }
-}
-else if (isset($_GET['information']))
-{
-    if ($_GET['information'] === 'mentions')
-    {
-        $ctrlFrontOffice->mentions();    
-    }
-    else 
-    {
-        throw new Exception ('Cette page n\'existe pas !');
-    }
-}
+        if ($_GET['action'] === 'episode')
+        {
+            if (isset($_GET['id']))
+            {
+                $idEpisode = intval($_GET['id']);
+                
+                if ($idEpisode != 0)
+                {
+                    $ctrlFrontOffice->episode($idEpisode);
+                }
+                else
+                {
+                    throw new Exception('L\'identifiant ' . $idEpisode . ' n\'éxiste pas');    
+                }
+            }
+            else
+            {
+                throw new Exception('Aucun identifiant n\'a été transmis');    
+            }
+        }
 
-else 
-{
-    $ctrlFrontOffice->home();
-}
+        else if ($_GET['action'] === 'mentions')
+        {
+            $ctrlFrontOffice->mentions();    
+        }
+        else
+        {
+             throw new Exception('Cette action n\'éxiste pas');   
+        }
+    }
+    else
+    {
+        $ctrlFrontOffice->home();    
+    }
+
 }
 catch (Exception $e)
 {

@@ -24,7 +24,7 @@
             <?= $sectionContent ?>
         </section>
         <footer>
-            <a href='index.php?information=mentions'>Mentions légales</a>
+            <a href='index.php?action=mentions'>Mentions légales</a>
             <h4>COPYRIGHT JEAN FORTEROCHE</h4>
         </footer>
     </body>
