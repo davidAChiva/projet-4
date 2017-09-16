@@ -8,8 +8,8 @@ ob_start();
 <h2>LES DERNIERS EPISODES</h2>   
 <?php foreach ($lastEpisodes as $lastEpisode): ?>
     <div class='episode'>
-        <h3 class='titleEpisode'><?= $lastEpisode['titre'] ?></h3>
-        <p class='contentEpisode'> <?= substr($lastEpisode['contenu'],0,350) . '...' ?></p>
+        <h3 class='titleEpisode'><?= $lastEpisode['title'] ?></h3>
+        <p class='contentEpisode'> <?= substr($lastEpisode['content'],0,350) . '...' ?></p>
         <a href='<?= 'index.php?episode=' . $lastEpisode['id'] ?>'>Voir l'épisode en entier</a>
     </div>
 <?php endforeach; ?>
@@ -27,7 +27,7 @@ ob_start();
     <div id='blockAllEpisodes'>
         <h2>LISTE DES EPISODES</h2>
         <?php foreach ($episodes as $episode): ?>
-        <a href='<?= 'index.php?episode=' . $episode['id'] ?>'><?= $episode['titre'] ?> </a>
+        <a href='<?= 'index.php?episode=' . $episode['id'] ?>'><?= $episode['title'] ?> </a>
         <?php endforeach; ?>
     </div>
     <div id='blockLastComments'>

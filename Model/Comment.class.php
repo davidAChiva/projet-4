@@ -14,7 +14,7 @@ class Comment extends Model
     // Liste de tous les commentaires
     public function getAllComments()
     {
-        $sql = 'SELECT comments.id,comments.author,comments.content,DATE_FORMAT(comments.date_comment, "%d/%m/%Y") AS date_comment,comments.episode_id,episodes.titre
+        $sql = 'SELECT comments.id,comments.author,comments.content,DATE_FORMAT(comments.date_comment, "%d/%m/%Y") AS date_comment,comments.episode_id,episodes.title
         FROM comments
         INNER JOIN episodes
         ON comments.episode_id = episodes.id
@@ -25,7 +25,7 @@ class Comment extends Model
     // Liste des commentaires de l'épisode concerné
     public function getComments($idEpisode)
     {
-        $sql = 'SELECT comments.id,comments.author,comments.content,DATE_FORMAT(comments.date_comment, "%d/%m/%Y") AS date_comment,comments.episode_id,episodes.titre
+        $sql = 'SELECT comments.id,comments.author,comments.content,DATE_FORMAT(comments.date_comment, "%d/%m/%Y") AS date_comment,comments.episode_id,episodes.title
         FROM comments
         INNER JOIN episodes
         ON comments.episode_id = episodes.id

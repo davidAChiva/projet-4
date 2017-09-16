@@ -11,7 +11,7 @@ ob_start();
 <?php foreach($episodes as $episode): ?>
 
     <tr>
-        <td class='titleEpisode'><?= $episode['titre'] ?></td>
+        <td class='titleEpisode'><?= $episode['title'] ?></td>
         <td><a  class='action' href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=modify'>Modifier</a></td>
         <td><a class='action' href='home.php?rubric=modifyEpisode&id=<?= $episode["id"] ?>&typeManage=delete'>Supprimer</a></td>
     </tr>

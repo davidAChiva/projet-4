@@ -1,14 +1,14 @@
 <?php
 
-$title = $episode['titre'] . " | Billet simple pour l'Alaska" ;
+$title = $episode['title'] . " | Billet simple pour l'Alaska" ;
 ob_start();
 
 ?>
 <div>
     <article>
-        <h2><?= $episode['titre'] ?></h2>
+        <h2><?= $episode['title'] ?></h2>
         <p class='episodeDate'>Créer le <?= $episode['date_creation'] ?></p>
-        <div class='episodeContent'><?= $episode['contenu'] ?></div>   
+        <div class='episodeContent'><?= $episode['content'] ?></div>   
     </article>
     <div id='blockComment'>
         <h3>COMMENTAIRES DE L'EPISODE</h3>

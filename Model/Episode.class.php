@@ -16,14 +16,14 @@ class Episode extends Model
     // Requête pour obtenir la liste de tous les épisodes dans l'ordre décroissant
     public function getEpisodesDesc()
     {
-        $sql = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC';
+        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC';
         $episodes = $this->executeRequest($sql);
         return $episodes;
     }
     //Requête pour obtenir la liste de tous les épisodes dans l'ordre croissant
     public function getEpisodesAsc()
     {
-        $sql = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id';
+        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id';
         $episodes = $this->executeRequest($sql);
         return $episodes;    
     }
@@ -31,7 +31,7 @@ class Episode extends Model
     // Affichage d'un seul épisode
     public function getEpisode($idEpisode)
     {
-        $sql = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes WHERE id = ?';
+        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes WHERE id = ?';
         $episode = $this->executeRequest($sql, array($idEpisode));
         if ($episode ->rowCount() === 1)
         {
@@ -39,34 +39,34 @@ class Episode extends Model
         }
         else
         {
-            throw new Exception("Aucun billet ne correspond à l'identifiant" . $idEpisode);
+            throw new Exception("Aucun billet ne correspond à l'identifiant " . $idEpisode);
         }
     }
     // Récupére les 5 derniers épisodes
     public function getLastEpisodes()
     {
-        $sql = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,5';
+        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,5';
         $lastEpisodes = $this->executeRequest($sql);
         return $lastEpisodes;
     }
     // Récupére le dernier épisode
     public function getLastEpisode()
     {
-        $sql = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,1';
+        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,1';
         $lastEpisode = $this->executeRequest($sql);
         return $lastEpisode->fetch();
     }
     // Requête pour enregistrer dans la BD le nouvel épisode
     public function setEpisode($title,$content)
     {
-        $sql = 'INSERT INTO episodes (titre, contenu, date_creation) VALUES (?, ?, CURDATE())';
+        $sql = 'INSERT INTO episodes (title, content, date_creation) VALUES (?, ?, CURDATE())';
         $setEpisode = $this->executeRequest($sql,array($title,$content));
         return $setEpisode;
     }
         // Modifie un épisode existant
     public function modifyEpisode($id,$title,$content)
     {
-        $sql = 'UPDATE episodes SET titre=?,contenu=? WHERE id=?';
+        $sql = 'UPDATE episodes SET title=?,content=? WHERE id=?';
         $modifyEpisode = $this->executeRequest($sql, array($title,$content,$id));
         return $modifyEpisode;
     }

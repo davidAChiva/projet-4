@@ -9,7 +9,7 @@ ob_start();
             <select name='idEpisodeGetComments' id='idEpisodeGetComments'>
                 <option value='all'>Tous les épisodes</option>
                 <?php foreach($episodes as $episode): ?>
-                <option value='<?= $episode['id'] ?>' > <?= $episode['titre'] ?></option>
+                <option value='<?= $episode['id'] ?>' > <?= $episode['title'] ?></option>
                 <?php endforeach; ?>
                 <input class='submit'type='submit' value='Sélectionnez'</input>
             </select>
@@ -29,7 +29,7 @@ ob_start();
                     <?php foreach($comments as $comment): ?>
 
                     <tr>
-                            <td><?= $comment['titre'] ?></td>
+                            <td><?= $comment['title'] ?></td>
                             <td><?= $comment['author'] ?></td>
                             <td><?= substr($comment['content'],0,100) ?></td>
                             <td><a href='home.php?rubric=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
