@@ -13,6 +13,6 @@ ob_start();
         <input class='submit' type='reset' value='Annuler' />
     </div>
 </form>
-<?php
+<?php  
 $sectionContent = ob_get_clean();
 ?>

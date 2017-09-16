@@ -52,6 +52,7 @@ class ControllerRubricAdmin
         if ((isset($_POST['titleEditEpisode'])) AND (isset($_POST['contentEditEpisode'])) AND (isset($_POST['idEditEpisode'])))
         {
             $this->episode->modifyEpisode($_POST['idEditEpisode'],strip_tags($_POST['titleEditEpisode']),$_POST['contentEditEpisode']);
+            $message = 'L\'épisode a bien été modifié';
         }
         
         $episode = $this->episode->getEpisode($_GET['id']);
@@ -98,8 +99,10 @@ class ControllerRubricAdmin
     {
         if (isset($_POST['idComment']) AND isset($_POST['authorComment']) AND isset($_POST['contentComment']))
         {
-            $this->comment->modifyComment($idComment,strip_tags($_POST['authorComment']),nl2br(strip_tags($_POST['contentComment'])));    
+            $this->comment->modifyComment($idComment,strip_tags($_POST['authorComment']),nl2br(strip_tags($_POST['contentComment'])));
+            $message = 'Le commentaire a bien été modifié';
         }
+        
         $comment = $this->comment->getComment($idComment);
         $comment['content'] = strip_tags($comment['content']);
         require_once 'View/ViewmodifyComment.php';

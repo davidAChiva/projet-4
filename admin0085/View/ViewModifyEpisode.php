@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<form method='post' action='home.php?rubric=modifyEpisode&id=<?= $episode['id'] ?>&typeManage=modify'>
+<form method='post' action='home.php?rubric=modifyEpisode&id=<?= $episode['id'] ?>&typeManage=modify#message'>
     <input type='hidden' id='idEditEpisode' name='idEditEpisode' value='<?= $episode['id'] ?>' required />
     <h3><label for='titleEditEpisode'>TITRE DE L'EPISODE</label></h3>
     <input type='text' id='titleEditEpisode' name='titleEditEpisode' value='<?= $episode['title'] ?>' required /> <br />
@@ -14,4 +14,10 @@ ob_start();
     </div>
 </form>
 
-<?php $sectionContent = ob_get_clean(); ?>
+<?php
+if (isset($message))
+{
+    echo '<p id=\'message\'>' . $message . '</p>';
+}   
+$sectionContent = ob_get_clean();
+?>
