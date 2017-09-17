@@ -28,5 +28,5 @@ ob_clean();
 </div>
 <?php
 $sectionContent = ob_get_clean();
-require_once'View/template.php';
+require_once'view/template.php';
 ?>

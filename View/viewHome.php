@@ -34,4 +34,4 @@ ob_start();
 </div>
 
 <?php $sectionContent = ob_get_clean(); ?>
-<?php require 'View/template.php'; ?>
+<?php require 'view/template.php'; ?>

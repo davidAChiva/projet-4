@@ -40,5 +40,5 @@ ob_start();
 
 <?php
 $sectionContent = ob_get_clean();
-require 'View/template.php';
+require 'view/template.php';
 ?>

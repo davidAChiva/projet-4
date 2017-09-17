@@ -20,7 +20,7 @@ class ControllerFrontOffice
        $episodes = $this->episode->getEpisodesAsc();
        $lastEpisodes = $this->episode->getLastEpisodes();
        $lastComments = $this->comment->getLastComments();
-       require "View/ViewHome.class.php";
+       require "view/viewHome.php";
     }
     // Affiche le contenu entier d'un seul épisode, ses commentaires et gére l'ajout d'un commentaire
     public function episode($idEpisode)
@@ -54,23 +54,23 @@ class ControllerFrontOffice
             }
             
         }
-        require_once 'View/ViewEpisode.class.php';
+        require_once 'view/viewEpisode.php';
     }
     
     // Affiche les mentions légales
     public function mentions()
     {
-        require_once 'View/ViewMentions.class.php';
+        require_once 'view/viewMentions.php';
     }
     // Affiche les informations de l'auteur
     public function author()
     {
-        require_once 'View/ViewAuthor.class.php';
+        require_once 'view/viewAuthor.php';
     }
     // Affiche la page d'erreur
     public function error($errorMsg)
     {
         $errorMessage = $errorMsg;
-        require_once 'View/ViewError404.php';
+        require_once 'view/viewError404.php';
     }
 }
