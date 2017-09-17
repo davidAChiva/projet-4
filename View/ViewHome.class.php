@@ -15,15 +15,6 @@ ob_start();
 <?php endforeach; ?>
 </div>
 <div id='sectionRightHome'>
-    <div id='propos'>
-    <h2>A PROPOS</h2>
-        <p>
-            Bienvenue sur mon blog ! <br />
-            Je m'appelle Jean Forteroche et je suis écrivain. Je travaille actuellement sur mon prochain roman "Billet simple pour l'Alaska". je souhaite innover et le publier par épisode en ligne sur ce site.
-            En espérant que le livre vous plaira, je vous souhaite une très bonne lecture.
-            N'hésitez pas à laisser un commentaire.
-        </p>
-    </div>
     <div id='blockAllEpisodes'>
         <h2>LISTE DES EPISODES</h2>
         <?php foreach ($episodes as $episode): ?>

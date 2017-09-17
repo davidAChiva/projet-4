@@ -31,6 +31,10 @@ try
         {
             $ctrlFrontOffice->mentions();    
         }
+        else if ($_GET['action'] === 'author')
+        {
+            $ctrlFrontOffice->author();
+        }
         else
         {
              throw new Exception('Cette action n\'éxiste pas');   

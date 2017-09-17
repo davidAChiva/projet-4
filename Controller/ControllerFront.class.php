@@ -62,7 +62,11 @@ class ControllerFrontOffice
     {
         require_once 'View/ViewMentions.class.php';
     }
-    
+    // Affiche les informations de l'auteur
+    public function author()
+    {
+        require_once 'View/ViewAuthor.class.php';
+    }
     // Affiche la page d'erreur
     public function error($errorMsg)
     {

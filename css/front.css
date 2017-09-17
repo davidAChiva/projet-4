@@ -48,15 +48,24 @@ section
     text-align: center;
     color: white;
 }
-#propos p
+#author
+{
+    width: 75%;
+    text-align: center;
+}
+#author p
 {
     background-color: white;
     color: black;
      padding: 5px;
 }
-#blockAllEpisodes
+#author ul
 {
-
+    text-align: left;
+}
+#author li
+{
+    font-size: 1.3em;
 }
 #blockAllEpisodes a
 {

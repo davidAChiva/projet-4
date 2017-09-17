@@ -12,7 +12,7 @@
             <h1>BILLET SIMPLE POUR L'ALASKA | <span>Jean Forteroche</span></h1>
             <nav>
                 <a href='index.php'>ACCUEIL</a>
-                <a href='contact.php'>CONTACT</a>
+                <a href='index.php?action=author'>L'AUTEUR</a>
             </nav>
             <div>
                 <a href=''><i class="fa fa-facebook fa-3x iconeFontAWeSome" aria-hidden="true"></i></a>
