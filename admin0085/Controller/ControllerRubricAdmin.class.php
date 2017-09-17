@@ -19,8 +19,8 @@ class ControllerRubricAdmin
     public function home()
     {
        $lastEpisode = $this->episode->getlastEpisode();
-       require "View/ViewHomeAdmin.php";
-       require_once'View/templateAdmin.php';
+       require "view/viewHomeAdmin.php";
+       require_once'view/templateAdmin.php';
     }
     
     //Affiche la page creer épisode et gére le formulaire
@@ -33,16 +33,16 @@ class ControllerRubricAdmin
         header('Location: home.php');
         exit;
     }
-        require_once 'View/ViewCreateEpisode.php';
-        require_once 'View/templateAdmin.php';
+        require_once 'view/viewCreateEpisode.php';
+        require_once 'view/templateAdmin.php';
     }
     
     // Affiche la page pour gérer les épisodes
     public function manageEpisodes()
     {
         $episodes = $this->episode->getEpisodesDesc();
-        require_once 'View/ViewManageEpisodes.php';
-        require_once 'View/templateAdmin.php';
+        require_once 'view/viewManageEpisodes.php';
+        require_once 'view/templateAdmin.php';
     }
     
     // Affiche l'épisode à modifié et gére la modification
@@ -57,8 +57,8 @@ class ControllerRubricAdmin
         
         $episode = $this->episode->getEpisode($_GET['id']);
 
-        require_once 'View/ViewModifyEpisode.php';
-        require_once 'View/templateAdmin.php';
+        require_once 'view/viewModifyEpisode.php';
+        require_once 'view/templateAdmin.php';
     }
     public function deleteEpisode($id)
     {
@@ -81,8 +81,8 @@ class ControllerRubricAdmin
             $comments = $this->comment->getAllcomments();    
         }
         $episodes = $this->episode->getEpisodesAsc();
-        require_once 'View/ViewManageComments.php';
-        require_once 'View/templateAdmin.php';
+        require_once 'view/viewManageComments.php';
+        require_once 'view/templateAdmin.php';
         
     } 
     
@@ -105,7 +105,7 @@ class ControllerRubricAdmin
         
         $comment = $this->comment->getComment($idComment);
         $comment['content'] = strip_tags($comment['content']);
-        require_once 'View/ViewmodifyComment.php';
-        require_once 'View/templateAdmin.php';
+        require_once 'view/viewmodifyComment.php';
+        require_once 'view/templateAdmin.php';
     }
 }

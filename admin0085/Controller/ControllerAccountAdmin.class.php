@@ -31,7 +31,7 @@ class ControllerAccountAdmin
                 header('Location: home.php');
             }
         }
-        require_once 'View/ViewConnexion.php';
+        require_once 'view/viewConnexion.php';
     }
     //Gére le changement de pseudo ou mot de passe
     public function modifyAccount()
@@ -60,8 +60,8 @@ class ControllerAccountAdmin
                 }
             }
         }
-        require_once'View/ViewModifyAccount.php';
-        require_once'View/templateAdmin.php';
+        require_once'view/viewModifyAccount.php';
+        require_once'view/templateAdmin.php';
     }
     // Controle si les identifiants saisis sont correct
     public function controlLogin($pseudoAdmin,$passwordAdmin)
