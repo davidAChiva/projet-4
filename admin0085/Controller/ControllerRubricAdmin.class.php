@@ -105,7 +105,7 @@ class ControllerRubricAdmin
         
         $comment = $this->comment->getComment($idComment);
         $comment['content'] = strip_tags($comment['content']);
-        require_once 'view/viewmodifyComment.php';
+        require_once 'view/viewModifyComment.php';
         require_once 'view/templateAdmin.php';
     }
 }

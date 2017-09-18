@@ -59,6 +59,13 @@ class ControllerFrontOffice
             }
             
         }
+        else if (isset($_POST['signalIdComment']) AND isset($_POST['signalCommentIdEpisode']))
+        {
+            $message = 'Bonjour Jean Forteroche,
+                        Un commentaire a été signalé, pour modérer le commentaire dans le back-office : http://david-alfaro.com/admin0085/home.php?';
+            mail('david.alfaro.chiva@gmail.com','Un commentaire a été signalé',$message);
+            $confirm = 'un e-mail a été envoyé à Jean Forteroche';
+        }
         require_once 'view/viewEpisode.php';
     }
     

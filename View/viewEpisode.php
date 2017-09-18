@@ -17,6 +17,12 @@ ob_start();
             <div class='comment'>
                 <p class='commentAuthor'> <?= $comment['author'] ?> <span> <?= $comment['date_comment'] ?></span></p> 
                 <p class='commentContent'> <?= $comment['content'] ?></p>
+                
+                <form method='post' action='index.php?action=episode&id=<?= $_GET['id'] ?>#confirmSignal'>
+                    <input type='hidden' id='signalIdComment' name='signalIdComment' value='<?= $comment['id'] ?>' required />
+                    <input type='hidden' id='signalCommentIdEpisode' name='signalCommentIdEpisode' value='<?= $_GET['id'] ?>' required />
+                    <input type='submit' class='submit' value='Signaler' />
+                </form>
             </div>
         <?php endforeach; ?>
 </div>
@@ -35,6 +41,11 @@ ob_start();
     </form>
 </div>
     <p class='errorMessage'><?= $errorMessage ?></p>
+    <?php if (isset($confirm))
+    {
+        echo '<p id=\'confirmSignal\'>' . $confirm . '</p>';
+    }
+    ?>
 </div>
 
 
