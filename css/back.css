@@ -45,11 +45,12 @@ nav a
 }
 table
 {
-    border: 1px #2572C6 solid;
+    border: 2px #2572C6 solid;
     border-radius: 5px;
     margin: auto;
     margin-bottom: 30px;
     color: black;
+    border-collapse: collapse;
 }
 table h2
 {
@@ -60,6 +61,7 @@ table h2
 table th
 {
     font-size: 2em;
+    border: 1px #2572C6 solid;
 }
 table td
 {

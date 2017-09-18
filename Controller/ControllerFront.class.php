@@ -41,15 +41,20 @@ class ControllerFrontOffice
                 exit;
             }
             else if (!preg_match('#[a-zA-Z0-9]{3,15}#',$_POST['author']))
-            {
+            {   
+                // Récupére les données saisies
                 $valueAuthor = $_POST['author'];
                 $valueComment = $_POST['comment'];
+                
+                // Affiche le message d'erreur
                 $errorMessage = 'Le pseudo doit contenir entre 3 et 15 caractères.';
             }
             else if (!preg_match('#[a-zA-Z0-9 ]{10,200}#',$_POST['comment']))
             {
+                // Récupére les données saisies
                 $valueAuthor = $_POST['author'];
                 $valueComment = $_POST['comment'];
+                // Affiche le message d'erreur
                 $errorMessage = 'Le commentaire doit contenir au moins 10 caractères.';    
             }
             
