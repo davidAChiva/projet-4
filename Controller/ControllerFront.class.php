@@ -61,8 +61,10 @@ class ControllerFrontOffice
         }
         else if (isset($_POST['signalIdComment']) AND isset($_POST['signalCommentIdEpisode']))
         {
+            $idEpisode = $_POST['signalCommentIdEpisode'];
+            $idComment = $_POST['signalIdComment'];
             $message = 'Bonjour Jean Forteroche,
-                        Un commentaire a été signalé, pour modérer le commentaire dans le back-office : http://david-alfaro.com/admin0085/home.php?';
+                        Un commentaire a été signalé, pour modérer le commentaire dans le back-office : http://david-alfaro.com/parcours-dev/projet-4/admin0085/home.php?action=manageComments&idEpisode=' . $idEpisode . '&typeManage=modify&idComment=' . $idComment;
             mail('david.alfaro.chiva@gmail.com','Un commentaire a été signalé',$message);
             $confirm = 'un e-mail a été envoyé à Jean Forteroche';
         }
