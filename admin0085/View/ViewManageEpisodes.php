@@ -13,7 +13,7 @@ ob_start();
     <tr>
         <td class='titleEpisode'><?= $episode['title'] ?></td>
         <td><a  class='action' href='home.php?action=manageEpisode&id=<?= $episode["id"] ?>&typeManage=modify'>Modifier</a></td>
-        <td><a class='action' href='home.php?action=manageEpisode&id=<?= $episode["id"] ?>&typeManage=delete'>Supprimer</a></td>
+        <td><a class='action' onclick='return(confirm("Voulez-vous confirmer la suppression de cet épisode ?"));' href='home.php?action=manageEpisode&id=<?= $episode["id"] ?>&typeManage=delete'>Supprimer</a></td>
     </tr>
 
 <?php endforeach; ?>

@@ -33,7 +33,7 @@ ob_start();
                             <td><?= $comment['author'] ?></td>
                             <td><?= substr($comment['content'],0,100) ?></td>
                             <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
-                        <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
+                        <td><a class='deleteComment' onclick='return(confirm("Voulez confirmer la suppression du commentaire?"));' href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
                     </tr>
                     <?php endforeach; ?>
             </table>
