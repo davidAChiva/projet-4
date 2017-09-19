@@ -36,7 +36,7 @@ class ControllerFrontOffice
         {
             if (preg_match('#[a-zA-Z0-9]{3,15}#',$_POST['author']) AND preg_match('#[a-zA-Z0-9 ]{10,200}#',$_POST['comment']))
             {
-                $this->comment->setComment(htmlspecialchars($_POST['author']), nl2br(strip_tags($_POST['comment'])), $idEpisode); 
+                $this->comment->setComment(strip_tags($_POST['author']), nl2br(strip_tags($_POST['comment'])), $idEpisode); 
                 header('Location: index.php?action=episode&id=' . $idEpisode);
                 exit;
             }

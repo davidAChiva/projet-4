@@ -1,6 +1,6 @@
 <?php
 $title = 'Biographie | Billet simple pour l\'Alaska';
-ob_clean();
+ob_start();
 ?>
 <div id='author'>
     <h2>JEAN FORTEROCHE</h2>
@@ -28,5 +28,5 @@ ob_clean();
 </div>
 <?php
 $sectionContent = ob_get_clean();
-require_once'view/template.php';
+require 'view/template.php';
 ?>
