@@ -18,4 +18,6 @@ ob_start();
 
 <?php endforeach; ?>
 </table>
-<?php $sectionContent = ob_get_clean(); ?>
+<?php   
+$sectionContent = ob_get_clean(); 
+?>

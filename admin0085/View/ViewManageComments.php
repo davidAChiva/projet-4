@@ -18,25 +18,25 @@ ob_start();
      </div>
 
     <div class='blockComments'>
-            <table id='boardModifyComments'>
-                <caption><h3>Les commentaires</h3></caption>
-                    <tr>
-                        <th>Episode</th>
-                        <th>Auteur</th>
-                        <th>Contenu</th>
-                        <th colspan='2'>Action</th>
-                    </tr>
-                    <?php foreach($comments as $comment): ?>
+        <table id='boardModifyComments'>
+            <caption><h3>Les commentaires</h3></caption>
+                <tr>
+                    <th>Episode</th>
+                    <th>Auteur</th>
+                    <th>Contenu</th>
+                    <th colspan='2'>Action</th>
+                </tr>
+                <?php foreach($comments as $comment): ?>
 
-                    <tr>
-                            <td><?= $comment['title'] ?></td>
-                            <td><?= $comment['author'] ?></td>
-                            <td><?= substr($comment['content'],0,100) ?></td>
-                            <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
-                        <td><a class='deleteComment' onclick='return(confirm("Voulez confirmer la suppression du commentaire?"));' href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
-                    </tr>
-                    <?php endforeach; ?>
-            </table>
+                <tr>
+                        <td><?= $comment['title'] ?></td>
+                        <td><?= $comment['author'] ?></td>
+                        <td><?= substr($comment['content'],0,100) ?></td>
+                        <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
+                    <td><a class='deleteComment' onclick='return(confirm("Voulez confirmer la suppression du commentaire?"));' href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
+                </tr>
+                <?php endforeach; ?>
+        </table>
     </div>
     
 <?php
