@@ -124,6 +124,18 @@ section p
 {
     color: black;
 }
+.linkEpisodeFrontOffice
+{
+    background-color: white;
+    border: none;
+    width: auto;
+    color: black;
+}
+.linkEpisodeFrontOffice:hover
+{
+    background-color: white;
+    color: #2572C6;
+}
 /** Support téléphone mobile **/
 @media all and (max-width: 767px)
 {

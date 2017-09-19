@@ -29,11 +29,11 @@ ob_start();
                 <?php foreach($comments as $comment): ?>
 
                 <tr>
-                        <td><?= $comment['title'] ?></td>
+                        <td><a class='linkEpisodeFrontOffice' href='../index.php?action=episode&id=<?= $comment['episode_id'] ?>'><?= $comment['title'] ?></a></td>
                         <td><?= $comment['author'] ?></td>
                         <td><?= substr($comment['content'],0,100) ?></td>
                         <td><a href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=modify&idComment=<?= $comment["id"] ?>'>Modifier</a></td>
-                    <td><a class='deleteComment' onclick='return(confirm("Voulez confirmer la suppression du commentaire?"));' href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
+                    <td><a onclick='return(confirm("Voulez confirmer la suppression du commentaire?"));' href='home.php?action=manageComments&idEpisode=<?= $comment['episode_id'] ?>&typeManage=delete&idComment=<?= $comment["id"] ?>'>Supprimer</a></td>
                 </tr>
                 <?php endforeach; ?>
         </table>
