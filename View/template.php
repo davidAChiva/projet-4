@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang='fr'>
     <head>
@@ -13,6 +16,14 @@
             <nav>
                 <a href='index.php'>ACCUEIL</a>
                 <a href='index.php?action=author'>L'AUTEUR</a>
+                <?php
+                if (isset($_SESSION['pseudo']))
+                {
+                ?>
+                    <a href='admin0085/home.php'>Administration</a>
+                <?php
+                }
+                ?>
             </nav>
             <div>
                 <a href=''><i class="fa fa-facebook fa-3x iconeFontAWeSome" aria-hidden="true"></i></a>

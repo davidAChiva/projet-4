@@ -5,7 +5,7 @@ ob_start();
     <h2>Modération des commentaires</h2>
     <div id='linkEpisode'>
         <form method='post' action='home.php?action=manageComments'>
-            <label for='idEpisodeGetComments'>TRIER PAR EPISODE</label>
+            <label for='idEpisodeGetComments'>FILTRER PAR EPISODE</label>
             <select name='idEpisodeGetComments' id='idEpisodeGetComments'>
                 <option value='all'>Tous les épisodes</option>
                 <?php foreach($episodes as $episode): ?>
