@@ -1,80 +1,53 @@
 <?php
 
-// Adaptation du chemin pour front et back
-if (file_exists('Framework/Model.class.php'))
+class Episode
 {
-    require_once 'Framework/Model.class.php';
-}
-else
-{
-require_once '../Framework/Model.class.php';
-}
-
-
-class Episode extends Model
-{
-    // Requête pour obtenir la liste de tous les épisodes dans l'ordre décroissant
-    public function getEpisodesDesc()
+    private $idEpisode;
+    private $titleEpisode;
+    private $contentEpisode;
+    private $dateEpisode;
+    
+    public function getIdEpisode()
     {
-        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC';
-        $episodes = $this->executeRequest($sql);
-        return $episodes;
-    }
-    //Requête pour obtenir la liste de tous les épisodes dans l'ordre croissant
-    public function getEpisodesAsc()
-    {
-        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id';
-        $episodes = $this->executeRequest($sql);
-        return $episodes;    
+        return $this->idEpisode;
     }
     
-    // Affichage d'un seul épisode
-    public function getEpisode($idEpisode)
+    public function setIdEpisode($id)
     {
-        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes WHERE id = ?';
-        $episode = $this->executeRequest($sql, array($idEpisode));
-        if ($episode ->rowCount() === 1)
-        {
-            return $episode->fetch();
-        }
-        else
-        {
-            throw new Exception("Aucun épisode ne correspond à l'identifiant " . $idEpisode);
-        }
+        $this->idEpisode = $id;
+        return $this;
     }
-    // Récupére les 5 derniers épisodes
-    public function getLastEpisodes()
+    
+    public function getTitleEpisode()
     {
-        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,5';
-        $lastEpisodes = $this->executeRequest($sql);
-        return $lastEpisodes;
+        return $this->titleEpisode;
     }
-    // Récupére le dernier épisode
-    public function getLastEpisode()
+    
+    public function setTitleEpisode($title)
     {
-        $sql = 'SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_creation FROM episodes ORDER BY id DESC LIMIT 0,1';
-        $lastEpisode = $this->executeRequest($sql);
-        return $lastEpisode->fetch();
+        $this->titleEpisode = $title;
+        return $this;
     }
-    // Requête pour enregistrer dans la BD le nouvel épisode
-    public function setEpisode($title,$content)
+    
+    public function getContentEpisode()
     {
-        $sql = 'INSERT INTO episodes (title, content, date_creation) VALUES (?, ?, CURDATE())';
-        $setEpisode = $this->executeRequest($sql,array($title,$content));
-        return $setEpisode;
+        return $this->contentEpisode;
     }
-        // Modifie un épisode existant
-    public function modifyEpisode($id,$title,$content)
+    
+    public function setContentEpisode($content)
     {
-        $sql = 'UPDATE episodes SET title=?,content=? WHERE id=?';
-        $modifyEpisode = $this->executeRequest($sql, array($title,$content,$id));
-        return $modifyEpisode;
+        $this->contentEpisode = $content;
+        return $this;
     }
-    // Supprime un épisode existant
-    public function deleteEpisode($id)
+    
+    public function getDateEpisode()
     {
-        $sql = 'DELETE from episodes WHERE id = ?';
-        $deleteEpisode = $this->executeRequest($sql, array($id));
-        return $deleteEpisode;
+        return $this->dateEpisode;
+    }
+    
+    public function setDateEpisode($date)
+    {
+        $this->dateEpisode = $date;
+        return $this;
     }
 }

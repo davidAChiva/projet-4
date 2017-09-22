@@ -1,7 +1,7 @@
 <?php
 require_once '../Model/Admin.class.php';
 require_once '../Model/Comment.class.php';
-require_once '../Model/Episode.class.php';
+require_once '../DAO/EpisodeDAO.class.php';
 
 
 class ControllerRubricAdmin
@@ -11,7 +11,7 @@ class ControllerRubricAdmin
     
     public function __construct ()
     {
-        $this->episode = new Episode;
+        $this->episode = new EpisodeDAO;
         $this->comment = new Comment;
     }
     
