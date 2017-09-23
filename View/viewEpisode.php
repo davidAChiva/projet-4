@@ -1,14 +1,14 @@
 <?php
 
-$title = $episode['title'] . " | Billet simple pour l'Alaska" ;
+$title = $episode->getTitleEpisode() . " | Billet simple pour l'Alaska" ;
 ob_start();
 
 ?>
 <div>
     <article>
-        <h2><?= $episode['title'] ?></h2>
-        <p class='episodeDate'>Créer le <?= $episode['date_creation'] ?></p>
-        <div class='episodeContent'><?= $episode['content'] ?></div>   
+        <h2><?= $episode->getTitleEpisode() ?></h2>
+        <p class='episodeDate'>Créer le <?= $episode->getDateEpisode() ?></p>
+        <div class='episodeContent'><?= $episode->getContentEpisode() ?></div>   
     </article>
     <div id='blockComment'>
         <h3>COMMENTAIRES DE L'EPISODE</h3>

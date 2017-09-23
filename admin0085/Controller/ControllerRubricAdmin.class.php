@@ -2,8 +2,7 @@
 require_once '../Model/Admin.class.php';
 require_once '../Model/Comment.class.php';
 require_once '../DAO/EpisodeDAO.class.php';
-
-
+    
 class ControllerRubricAdmin
 {
     private $episode;

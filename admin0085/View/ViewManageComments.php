@@ -9,7 +9,7 @@ ob_start();
             <select name='idEpisodeGetComments' id='idEpisodeGetComments'>
                 <option value='all'>Tous les épisodes</option>
                 <?php foreach($episodes as $episode): ?>
-                <option value='<?= $episode['id'] ?>' > <?= $episode['title'] ?></option>
+                <option value='<?= $episode->getIdEpisode() ?>' > <?= $episode->getTitleEpisode() ?></option>
                 <?php endforeach; ?>
                 <input class='submit'type='submit' value='Sélectionnez'</input>
             </select>

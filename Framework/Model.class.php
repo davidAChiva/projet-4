@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Configuration.class.php';
     
 abstract class Model 

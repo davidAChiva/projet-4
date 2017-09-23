@@ -8,9 +8,9 @@ ob_start();
 <h2>LES DERNIERS EPISODES</h2>   
 <?php foreach ($lastEpisodes as $lastEpisode): ?>
     <div class='episode'>
-        <h3 class='titleEpisode'><?= $lastEpisode['title'] ?></h3>
-        <p class='contentEpisode'> <?= substr($lastEpisode['content'],0,350) . '...' ?></p>
-        <a href='<?= 'index.php?action=episode&id=' . $lastEpisode['id'] ?>'>Voir l'épisode en entier</a>
+        <h3 class='titleEpisode'><?= $lastEpisode->getTitleEpisode() ?></h3>
+        <p class='contentEpisode'> <?= substr($lastEpisode->getContentEpisode(),0,350) . '...' ?></p>
+        <a href='<?= 'index.php?action=episode&id=' . $lastEpisode->getIdEpisode() ?>'>Voir l'épisode en entier</a>
     </div>
 <?php endforeach; ?>
 </div>
@@ -18,7 +18,7 @@ ob_start();
     <div id='blockAllEpisodes'>
         <h2>LISTE DES EPISODES</h2>
         <?php foreach ($episodes as $episode): ?>
-        <a href='<?= 'index.php?action=episode&id=' . $episode['id'] ?>'><?= $episode['title'] ?> </a>
+        <a href='<?= 'index.php?action=episode&id=' . $episode->getIdEpisode() ?>'><?= $episode->getTitleEpisode() ?> </a>
         <?php endforeach; ?>
     </div>
     <div id='blockLastComments'>
