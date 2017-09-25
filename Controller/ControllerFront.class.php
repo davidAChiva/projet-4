@@ -1,7 +1,7 @@
 <?php
 
 require_once 'DAO/EpisodeDAO.class.php';
-require_once 'Model/Comment.class.php';
+require_once 'DAO/CommentDAO.class.php';
 
 class ControllerFrontOffice
 {
@@ -11,7 +11,7 @@ class ControllerFrontOffice
     public function __construct()
     {
         $this->episode = new EpisodeDAO;
-        $this->comment = new Comment;
+        $this->comment = new CommentDAO;
     }
     
     // Affiche les éléments de la page d'accueil

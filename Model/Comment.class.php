@@ -6,7 +6,8 @@ class Comment
     private $authorComment;
     private $contentComment;
     private $dateComment;
-    private $idEpisodeComment;
+    private $idEpisode;
+    private $titleEpisode;
     
     public function getIdComment()
     {
@@ -51,13 +52,26 @@ class Comment
         $this->dateComment = $date;
         return $this;
     }
-    public function getIdEpisodeComment()
+
+    public function getIdEpisode()
     {
-        $this->idEpisodeComment;
+        $this->idEpisode;
     }
-    public function setIdEpisodeComment($id)
+    
+    public function setIdEpisode($episodeId)
     {
-        $this->idEpisodeComment = $id;
+        $this->idEpisode = $episodeId;
+        return $this;
+    }
+
+    public function getTitleEpisode()
+    {
+        $this->titleEpisode;
+    }
+    
+    public function setTitleEpisode($title)
+    {
+        $this->titleEpisode = $title;
         return $this;
     }
 }

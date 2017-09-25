@@ -42,7 +42,7 @@ if (isset($_SESSION['pseudo']) AND (isset($_SESSION['password'])))
          
         else if ($_GET['action'] === 'manageComments')
         {   
-            if (isset($_GET['idEpisode']) AND isset($_GET['typeManage']))
+            if (isset($_GET['idComment']) AND isset($_GET['typeManage']))
             {
                 // Modification du commentaire
                 if ($_GET['typeManage'] === 'modify')

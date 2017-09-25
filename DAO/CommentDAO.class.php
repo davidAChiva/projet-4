@@ -12,7 +12,7 @@ else
 }
    
 
-class Comment extends Model
+class CommentDAO extends Model
 {
     // Liste de tous les commentaires
     public function getAllComments()
@@ -21,8 +21,16 @@ class Comment extends Model
         FROM comments
         INNER JOIN episodes
         ON comments.episode_id = episodes.id
-        ORDER BY episodes.id ASC ';
-        $comments = $this->executeRequest($sql);
+        ORDER BY comments.episode_id ASC';
+        $result = $this->executeRequest($sql);
+        $comments = array();
+        
+        foreach ($result as $row)
+        {
+            $commentId = $row['id'];
+            // Convertit un tableau en objet Episode
+            $comments[$commentId] = $this->buildComment($row);
+        }
         return $comments;
     }
     // Liste des commentaires de l'épisode concerné
@@ -33,28 +41,48 @@ class Comment extends Model
         INNER JOIN episodes
         ON comments.episode_id = episodes.id
         WHERE comments.episode_id = ?';
-        $comments = $this->executeRequest($sql, array($idEpisode));
+        $result = $this->executeRequest($sql,array($idEpisode));
+        $comments = array();
+    
+        foreach ($result as $row)
+        {
+            $commentId = $row['id'];
+            // Convertit un tableau en objet Episode
+            $comments[$commentId] = $this->buildComment($row);
+        }
         return $comments;
     }
     // Récupére un commentaire
     public function getComment($idComment)
     {
-        $sql = 'SELECT id,author,content FROM comments WHERE id=?';
-        $comment = $this->executeRequest($sql, array($idComment));
-         if ($comment ->rowCount() === 1)
+        $sql = 'SELECT id, author, content, date_comment, episode_id FROM comments WHERE id=?';
+        $row = $this->executeRequest($sql, array($idComment));
+        if ($row->rowCount() === 1)
         {
-            return $comment->fetch();
+            // Transforme l'objet PDO en tableau
+            $comment = $row->fetch(PDO::FETCH_ASSOC);
+            $comment = $this->buildComment($comment);
+
+            return $comment;
         }
         else
         {
-            throw new Exception("Aucun commentaire ne correspond à l'identifiant" . $idComment);
+            throw new Exception("Aucun commentaire ne correspond à l'identifiant " . $idComment);
         }
     }
     // Récupére les 5 derniers commentaires
     public function getLastComments()
     {
-        $sql= 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment FROM comments ORDER BY id DESC LIMIT 5';
-        $lastComments = $this->executeRequest($sql);
+        $sql= 'SELECT id,author,content,DATE_FORMAT(date_comment, "%d/%m/%Y") AS date_comment,episode_id FROM comments ORDER BY id DESC LIMIT 5';
+        $result = $this->executeRequest($sql);
+        $lastComments = array();
+        
+        foreach ($result as $row)
+        {
+            $lastCommentId = $row['id'];
+            // Convertit un tableau en objet Episode
+            $lastComments[$lastCommentId] = $this->buildComment($row);
+        }
         return $lastComments;
     }
     // Ajoute un commentaire à la base
@@ -81,7 +109,24 @@ class Comment extends Model
     public function deleteCommentsEpisode($idEpisode)
     {
         $sql = 'DELETE FROM comments WHERE episode_id=?';
-        $deleteCommentsEpisode =$this->executeRequest($sql, array($idEpisode));
+        $deleteCommentsEpisode = $this->executeRequest($sql, array($idEpisode));
         return $deleteCommentsEpisode;
+    }
+    // Crée un objet épisode en se basant sur $row
+    // $row est un tableau qui regroupe les informations d'un commentaire
+    
+    private function buildComment(array $row)
+    {
+        $comment = new Comment;
+        $comment->setIdComment($row['id']);
+        $comment->setAuthorComment($row['author']);
+        $comment->setContentComment($row['content']);
+        $comment->setDateComment($row['date_comment']);
+        $comment->setIdEpisode($row['episode_id']);
+        if (array_key_exists('title',$row))
+        {
+            $comment->setTitleEpisode($row['title']);
+        }
+        return $comment;
     }
 }

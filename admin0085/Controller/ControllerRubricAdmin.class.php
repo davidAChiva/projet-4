@@ -1,6 +1,6 @@
 <?php
 require_once '../Model/Admin.class.php';
-require_once '../Model/Comment.class.php';
+require_once '../DAO/CommentDAO.class.php';
 require_once '../DAO/EpisodeDAO.class.php';
     
 class ControllerRubricAdmin
@@ -11,7 +11,7 @@ class ControllerRubricAdmin
     public function __construct ()
     {
         $this->episode = new EpisodeDAO;
-        $this->comment = new Comment;
+        $this->comment = new CommentDAO;
     }
     
     // Affiche la page d'accueil
@@ -103,7 +103,7 @@ class ControllerRubricAdmin
         }
         
         $comment = $this->comment->getComment($idComment);
-        $comment['content'] = strip_tags($comment['content']);
+        //$comment->getContentComment() = strip_tags($comment->getContentComment());
         require_once 'view/viewModifyComment.php';
         require_once 'view/templateAdmin.php';
     }

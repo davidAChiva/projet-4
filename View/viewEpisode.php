@@ -15,11 +15,11 @@ ob_start();
 
         <?php foreach ($comments as $comment): ?>
             <div class='comment'>
-                <p class='commentAuthor'> <?= $comment['author'] ?> <span> <?= $comment['date_comment'] ?></span></p> 
-                <p class='commentContent'> <?= $comment['content'] ?></p>
+                <p class='commentAuthor'> <?= $comment->getAuthorComment() ?> <span> <?= $comment->getDateComment() ?></span></p> 
+                <p class='commentContent'> <?= $comment->getContentComment() ?></p>
                 
                 <form method='post' action='index.php?action=episode&id=<?= $_GET['id'] ?>#confirmSignal'>
-                    <input type='hidden' id='signalIdComment' name='signalIdComment' value='<?= $comment['id'] ?>' required />
+                    <input type='hidden' id='signalIdComment' name='signalIdComment' value='<?= $comment->getIdComment() ?>' required />
                     <input type='hidden' id='signalCommentIdEpisode' name='signalCommentIdEpisode' value='<?= $_GET['id'] ?>' required />
                     <input type='submit' class='submit' value='Signaler' />
                 </form>
