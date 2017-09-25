@@ -61,6 +61,7 @@ class CommentDAO extends Model
         {
             // Transforme l'objet PDO en tableau
             $comment = $row->fetch(PDO::FETCH_ASSOC);
+            $comment['content'] = strip_tags($comment['content']);
             $comment = $this->buildComment($comment);
 
             return $comment;

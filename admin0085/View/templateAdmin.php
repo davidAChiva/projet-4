@@ -10,7 +10,10 @@
     </head>
     <body>
         <header>
+            <div>
             <h1>ADMINISTRATION </br > BILLET SIMPLE POUR L'ALASKA</h1>
+            <a href='../index.php'>RETOURNER AU FRONT OFFICE</a>
+            </div>
         </header>
         <div id='banner'></div>
     <div class='mainBlock'>
