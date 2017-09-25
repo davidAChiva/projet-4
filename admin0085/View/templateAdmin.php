@@ -24,7 +24,7 @@
             <div>
             <h2>EPISODES ET COMMENTAIRES</h2>
             <a href='home.php?action=newEpisode'>CREER UN NOUVEL EPISODE</a>
-            <a href='home.php?action=manageEpisode'>MODIFIER UN EPISODE</a>
+            <a href='home.php?action=manageEpisode'>GERER LES EPISODES</a>
             <a href='home.php?action=manageComments'>GERER LES COMMENTAIRES</a>
             </div>
         </nav>

@@ -1,5 +1,5 @@
 <?php
-require_once '../Model/Admin.class.php';
+require_once '../DAO/AdminDAO.class.php';
 
 class ControllerAccountAdmin
 {
@@ -7,7 +7,7 @@ class ControllerAccountAdmin
     
     public function __construct ()
     {
-        $this->accountAdmin = new admin;
+        $this->accountAdmin = new adminDAO;
     }
     // Gére la connexion
     public function connexion()
@@ -23,7 +23,7 @@ class ControllerAccountAdmin
             $checkLogin = $this->controlLogin($pseudoKey,$passwordKey);
 
             // Controle si le pseudo et mot de passe saisi corresponde à la ligne de la table
-            if ($pseudoKey === $checkLogin['pseudonym'] AND $passwordKey === $checkLogin['password'])
+            if ($pseudoKey === $checkLogin->getPseudoAdmin() AND $passwordKey === $checkLogin->getPasswordAdmin())
             {
                 // Enregistrement des informations de connexion dans la session
                 $_SESSION['pseudo'] = $pseudoKey;
@@ -53,7 +53,7 @@ class ControllerAccountAdmin
                 $oldPassword = hash('sha512',$oldPassword);
                 $loginAdmin = $this->controlLogin($_SESSION['pseudo'], $oldPassword);
                 
-                if ($loginAdmin['pseudonym'] === $_SESSION['pseudo'] AND $loginAdmin['password'] === $oldPassword)
+                if ($loginAdmin->getPseudoAdmin() === $_SESSION['pseudo'] AND $loginAdmin->getPasswordAdmin() === $oldPassword)
                 {
                     $newPassword = hash('sha512',$newPassword);
                     $this->accountAdmin->setNewPasswordAdmin($_SESSION['pseudo'], $newPassword);

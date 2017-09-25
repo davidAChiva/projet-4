@@ -1,33 +1,29 @@
 <?php
-require_once '../Framework/Model.class.php';
 
-class Admin extends Model
+class Admin
 {
-    public function getLoginAdmin($pseudoAdmin, $passwordAdmin)
+    private $pseudoAdmin;
+    private $passwordAdmin;
+    
+    public function getPseudoAdmin()
     {
-        $sql= 'SELECT id,pseudonym,password FROM login_admin WHERE pseudonym =? AND password =?';
-        $loginAdmin = $this->executeRequest($sql,array($pseudoAdmin, $passwordAdmin));
-        if ($loginAdmin->rowCount() === 1)
-        {
-            return $loginAdmin->fetch();
-        }
-        else
-        {
-            throw new Exception("L'identifiant où le mot de passe est incorrect");
-        }
-    }   
-    // change le pseudo du compte d'administration
-    public function setNewPseudoAdmin($oldPseudoAdmin, $newPseudoAdmin)
-    {
-        $sql = 'UPDATE login_admin SET pseudonym=? WHERE pseudonym=?';
-        $setNewPseudo = $this->executeRequest($sql,array($newPseudoAdmin,$oldPseudoAdmin));
-        return $setNewPseudo;
+        return $this->pseudoAdmin;
     }
-    // change le mot de passe du compte d'administration
-    public function setNewPasswordAdmin($pseudoAdmin, $newPasswordAdmin)
+    
+    public function setPseudoAdmin($pseudo)
     {
-        $sql = 'UPDATE login_admin SET password =? WHERE pseudonym =?';
-        $setNewPassword = $this->executeRequest($sql, array($newPasswordAdmin, $pseudoAdmin));
-        return $setNewPassword;
+        $this->pseudoAdmin = $pseudo;
+        return $this;
+    }
+    
+    public function getPasswordAdmin()
+    {
+        return $this->passwordAdmin;
+    }
+    
+    public function setPasswordAdmin($password)
+    {
+        $this->passwordAdmin = $password;
+        return $this;
     }
 }

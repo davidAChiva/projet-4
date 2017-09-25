@@ -1,5 +1,5 @@
 <?php
-require_once '../Model/Admin.class.php';
+require_once '../DAO/AdminDAO.class.php';
 require_once '../DAO/CommentDAO.class.php';
 require_once '../DAO/EpisodeDAO.class.php';
     
@@ -101,9 +101,8 @@ class ControllerRubricAdmin
             $this->comment->modifyComment($idComment,strip_tags($_POST['authorComment']),nl2br(strip_tags($_POST['contentComment'])));
             $message = 'Le commentaire a bien été modifié';
         }
-        
         $comment = $this->comment->getComment($idComment);
-        //$comment->getContentComment() = strip_tags($comment->getContentComment());
+        (strip_tags($comment->getContentComment()));
         require_once 'view/viewModifyComment.php';
         require_once 'view/templateAdmin.php';
     }
