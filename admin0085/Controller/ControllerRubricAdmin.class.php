@@ -73,7 +73,7 @@ class ControllerRubricAdmin
         if (isset($_POST['idEpisodeGetComments']) AND $_POST['idEpisodeGetComments'] !== 'all')
         {
             $idEpisode = $_POST['idEpisodeGetComments'];
-            $comments = $this->comment->getComments($idEpisode);          
+            $comments = $this->comment->getComments($idEpisode);
         }
         else
         {
